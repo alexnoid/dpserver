@@ -9,7 +9,7 @@ class HttpProcessor(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write("hello !")
 
-serv = HTTPServer(("localhost",80),HttpProcessor)
+serv = HTTPServer(("https://dpsarvar.herokuapp.com/",80),HttpProcessor)
 serv.serve_forever()
 vk_session = vk_api.VkApi('+375447022103', '6626816')
 vk_session.auth()
