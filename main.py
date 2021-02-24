@@ -7,7 +7,7 @@ class HttpProcessor(BaseHTTPRequestHandler):
         self.request.get()
         self.send_response(200)
 
-serv = HTTPServer(HttpProcessor)
+serv = HTTPServer(('https://dpsarvar.herokuapp.com/',80),HttpProcessor)
 serv.serve_forever()
 vk_session = vk_api.VkApi('+375447022103', '6626816')
 vk_session.auth()
