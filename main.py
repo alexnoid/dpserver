@@ -1,4 +1,5 @@
 import vk_api
+import os
 import json
 from http.server import BaseHTTPRequestHandler,HTTPServer
 
@@ -11,7 +12,8 @@ class HttpProcessor(BaseHTTPRequestHandler):
         self.wfile.write("<html><head><title>Title goes here.</title>хуй пизда залупа</head>".encode())
         #self.wfile.write("hello !")
 
-serv = HTTPServer(HttpProcessor)
+PORT = os.environ['PORT']
+serv = HTTPServer(('',PORT)HttpProcessor)
 serv.serve_forever()
 vk_session = vk_api.VkApi('+375447022103', '6626816')
 vk_session.auth()
