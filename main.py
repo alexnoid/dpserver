@@ -11,7 +11,7 @@ class HttpProcessor(BaseHTTPRequestHandler):
         self.wfile.write("<html><head><title>Title goes here.</title>хуй пизда залупа</head>".encode())
         #self.wfile.write("hello !")
 
-serv = HTTPServer(('127.0.0.1',80),HttpProcessor)
+serv = HTTPServer(HttpProcessor)
 serv.serve_forever()
 vk_session = vk_api.VkApi('+375447022103', '6626816')
 vk_session.auth()
