@@ -13,7 +13,7 @@ class HttpProcessor(BaseHTTPRequestHandler):
         #self.wfile.write("hello !")
 
 PORT = os.environ['PORT']
-serv = HTTPServer(('',PORT)HttpProcessor)
+serv = HTTPServer(('',PORT),HttpProcessor)
 serv.serve_forever()
 vk_session = vk_api.VkApi('+375447022103', '6626816')
 vk_session.auth()
