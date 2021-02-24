@@ -4,10 +4,14 @@ from http.server import BaseHTTPRequestHandler,HTTPServer
 
 class HttpProcessor(BaseHTTPRequestHandler):
     def do_GET(self):
-        self.request.get()
+        #self.request.get()
         self.send_response(200)
+        self.send_header('content-type', 'text/html')
+        self.end_headers()
+        self.wfile.write("<html><head><title>Title goes here.</title>хуй пизда залупа</head>".encode())
+        #self.wfile.write("hello !")
 
-serv = HTTPServer(('https://dpsarvar.herokuapp.com/',80),HttpProcessor)
+serv = HTTPServer(('127.0.0.1',80),HttpProcessor)
 serv.serve_forever()
 vk_session = vk_api.VkApi('+375447022103', '6626816')
 vk_session.auth()
