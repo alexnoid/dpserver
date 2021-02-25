@@ -11,7 +11,7 @@ class HttpProcessor(BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header('content-type', 'text/html')
         self.end_headers()
-        self.wfile.write(str(imsi))
+        self.wfile.write(str(imsi).encode())
         #self.wfile.write("hello !")
 
 
