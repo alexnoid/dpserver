@@ -15,6 +15,7 @@ class HttpProcessor(BaseHTTPRequestHandler):
         #self.wfile.write("hello !")
 
 
+port = os.environ['PORT']
 server = HTTPServer(('', 80), HttpProcessor)
 server.serve_forever()
 #t = threading.Thread(target=serv.serve_forever(), daemon=True)
