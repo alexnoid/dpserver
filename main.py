@@ -1,21 +1,18 @@
 import vk_api
-import os
-import json
-import urllib.parse as urlparse
+import time
+from datetime import datetime
+from flask import Flask, Response
 
-from http.server import BaseHTTPRequestHandler,HTTPServer
+app = Flask(__name__)
 
-class HttpProcessor(BaseHTTPRequestHandler):
-    def do_GET(self):
-        imsi = urlparse.parse_qs(urlparse.urlparse(self.path).query).get('param1', None)
-        self.send_response(200)
-        self.log_request('sekaasdasda')
-        self.send_header('content-type', 'text/html')
-        self.end_headers()
-        self.wfile.write('zaebis'.encode())
 
-        #self.wfile.write("hello !")
-
+@app.route('/time')
+def doyouhavethetime():
+    def generate():
+        while True:
+            yield "{}\n".format(datetime.now().isoformat())
+            time.sleep(1)
+    return Response(generate(), mimetype='text/plain')
 
 import os
 ON_HEROKU = os.environ.get('ON_HEROKU')
