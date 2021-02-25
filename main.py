@@ -1,13 +1,13 @@
 import vk_api
 import os
 import json
-import urllib
+import urllib.parse as urlparse
 
 from http.server import BaseHTTPRequestHandler,HTTPServer
 
 class HttpProcessor(BaseHTTPRequestHandler):
     def do_GET(self):
-        imsi = urllib.urlparse.parse_qs(urllib.urlparse.urlparse(self.path).query).get('param1', None)
+        imsi = urlparse.parse_qs(urlparse.urlparse(self.path).query).get('param1', None)
         self.send_response(200)
         self.send_header('content-type', 'text/html')
         self.end_headers()
