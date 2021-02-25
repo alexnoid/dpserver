@@ -9,6 +9,7 @@ class HttpProcessor(BaseHTTPRequestHandler):
     def do_GET(self):
         imsi = urlparse.parse_qs(urlparse.urlparse(self.path).query).get('param1', None)
         self.send_response(200)
+        self.log_request('sekaasdasda')
         self.send_header('content-type', 'text/html')
         self.end_headers()
         self.wfile.write('zaebis'.encode())
