@@ -7,11 +7,11 @@ from http.server import BaseHTTPRequestHandler,HTTPServer
 
 class HttpProcessor(BaseHTTPRequestHandler):
     def do_GET(self):
-        # self.request.get()
+        zapros = self.request.get('param1')
         self.send_response(200)
         self.send_header('content-type', 'text/html')
         self.end_headers()
-        self.wfile.write("<html><head><title>Title goes here.</title>хуй пизда залупа</head>".encode())
+        self.wfile.write(zapros.encode())
         #self.wfile.write("hello !")
 
 
@@ -24,7 +24,6 @@ else:
     port = 3000
 
 server = HTTPServer(('', port), HttpProcessor)
-print(port)
 server.serve_forever()
 #t = threading.Thread(target=serv.serve_forever(), daemon=True)
 #t.start()
