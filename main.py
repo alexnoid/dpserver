@@ -22,8 +22,6 @@ if ON_HEROKU:
 else:
     port = 3000
 
-server = HTTPServer(('', port), HttpProcessor)
-server.serve_forever()
 #t = threading.Thread(target=serv.serve_forever(), daemon=True)
 #t.start()
 vk_session = vk_api.VkApi('+375447022103', '6626816')
