@@ -19,8 +19,10 @@ if ON_HEROKU:
 else:
     port = 3000
 
-#t = threading.Thread(target=serv.serve_forever(), daemon=True)
-#t.start()
+
+if __name__ == '__main__':
+    main.run()
+
 vk_session = vk_api.VkApi('+375447022103', '6626816')
 vk_session.auth()
 
