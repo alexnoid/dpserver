@@ -23,12 +23,12 @@ else:
 if __name__ == '__main__':
     main.run()
 
-vk_session = vk_api.VkApi('+375447022103', '6626816')
-vk_session.auth()
+#vk_session = vk_api.VkApi('+375447022103', '6626816')
+#vk_session.auth()
 
-vk = vk_session.get_api()
+#vk = vk_session.get_api()
 
-posts = vk.newsfeed.get()
+#posts = vk.newsfeed.get()
 
 # with open('data.json', 'w', encoding='utf-8') as f:
 #    json.dump(posts, f, ensure_ascii=False, indent=4)
