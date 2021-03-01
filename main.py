@@ -4,6 +4,7 @@ import os
 
 # Задаем адрес сервера
 SERVER_ADDRESS = (socket.gethostbyname('0.0.0.0'), int(os.environ['PORT']))
+#SERVER_ADDRESS = ('localhost', 80)
 
 # Говорит о том, сколько дескрипторов единовременно могут быть открыты
 MAX_CONNECTIONS = 10
@@ -40,13 +41,12 @@ def handle_readables(readables, server):
             connection.setblocking(0)
             INPUTS.append(connection)
             print("new connection from {address}".format(address=client_address))
-            print(str(connection))
 
         # Если событие исходит не от серверного сокета, но сработало прерывание на наполнение входного буффера
         else:
             data = "vseochenploho"
             try:
-                data = str.encode("vseochenploho") + resource.recv(1024)
+                data = resource.recv(1024)
 
             # Если сокет был закрыт на другой стороне
             except ConnectionResetError:
