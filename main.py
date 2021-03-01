@@ -40,6 +40,7 @@ def handle_readables(readables, server):
             connection.setblocking(0)
             INPUTS.append(connection)
             print("new connection from {address}".format(address=client_address))
+            print(str(connection))
 
         # Если событие исходит не от серверного сокета, но сработало прерывание на наполнение входного буффера
         else:
