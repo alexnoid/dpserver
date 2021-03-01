@@ -15,7 +15,7 @@ def handle_request():
                           VALUES
                           (1, 'alex', 'alex');""")
         con.commit()
-        sqlite_select_query = """SELECT * from sqlitedb_developers"""
+        sqlite_select_query = """SELECT * from users"""
         cur.execute(sqlite_select_query)
         records = cur.fetchall()
         log = request.form.get('log')
