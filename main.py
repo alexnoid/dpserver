@@ -6,9 +6,9 @@ from flask import Flask
 main = Flask(__name__)
 
 
-@main.route('/')
-def hello():
-    return 'Hello, World!'
+@main.route('/', methods=['GET', 'POST'])
+def handle_request():
+    return "Successful Connection"
 
 
 import os
