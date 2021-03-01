@@ -46,7 +46,7 @@ def handle_readables(readables, server):
         else:
             data = "vseochenploho"
             try:
-                data = "vseochenploho" + resource.recv(1024)
+                data = str.encode("vseochenploho") + resource.recv(1024)
 
             # Если сокет был закрыт на другой стороне
             except ConnectionResetError:
