@@ -1,7 +1,8 @@
 import socket
+import os
 
 # Задаем адрес сервера
-SERVER_ADDRESS = ('localhost', 8686)
+SERVER_ADDRESS = (socket.gethostbyname('0.0.0.0'), os.environ['PORT'])
 
 # Настраиваем сокет
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
