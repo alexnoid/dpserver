@@ -1,14 +1,30 @@
 import vk_api
-import time
-from datetime import datetime
-from flask import Flask
+from flask import Flask, request
+import sqlite3 as sql
 
 main = Flask(__name__)
 
 
 @main.route('/', methods=['GET', 'POST'])
 def handle_request():
-    return "Successful Connection"
+    con = sql.connect('DB/data.db')
+    with con:
+        cur = con.cursor()
+        cur.execute("""INSERT INTO users
+                          (id, log, pass)
+                          VALUES
+                          (1, 'alex', 'alex');""")
+        con.commit()
+        sqlite_select_query = """SELECT * from sqlitedb_developers"""
+        cur.execute(sqlite_select_query)
+        records = cur.fetchall()
+        log = request.form.get('log')
+        pas = request.form.get('pass')
+        for record in records:
+            bd_log = record[1];
+            bd_pas = record[2];
+
+    return "otprav="+log+pas+"imeu="+bd_log+bd_pas
 
 
 import os
