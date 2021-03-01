@@ -1,34 +1,22 @@
-import vk_api
-import time
-from datetime import datetime
-from flask import Flask
+import socket
 
-main = Flask(__name__)
+# Задаем адрес сервера
+SERVER_ADDRESS = ('localhost', 8686)
 
+# Настраиваем сокет
+server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+server_socket.bind(SERVER_ADDRESS)
+server_socket.listen(10)
+print('server is running, please, press ctrl+c to stop')
 
-@main.route('/')
-def hello():
-    return 'Hello, World!'
+# Слушаем запросы
+while True:
+    connection, address = server_socket.accept()
+    print("new connection from {address}".format(address=address))
 
+    data = connection.recv(1024)
+    print(str(data))
 
-import os
-ON_HEROKU = os.environ.get('ON_HEROKU')
-if ON_HEROKU:
-    # get the heroku port
-    port = int(os.environ.get("PORT", 17995))  # as per OP comments default is 17995
-else:
-    port = 3000
+    connection.send(bytes('Hello from server!', encoding='UTF-8'))
 
-
-if __name__ == '__main__':
-    main.run()
-
-#vk_session = vk_api.VkApi('+375447022103', '6626816')
-#vk_session.auth()
-
-#vk = vk_session.get_api()
-
-#posts = vk.newsfeed.get()
-
-# with open('data.json', 'w', encoding='utf-8') as f:
-#    json.dump(posts, f, ensure_ascii=False, indent=4)
+    connection.close()
