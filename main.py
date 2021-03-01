@@ -43,7 +43,7 @@ def handle_readables(readables, server):
 
         # Если событие исходит не от серверного сокета, но сработало прерывание на наполнение входного буффера
         else:
-            data = ""
+            data = "vseochenploho"
             try:
                 data = resource.recv(1024)
 
