@@ -10,11 +10,7 @@ def handle_request():
     con = sql.connect('DB/data.db')
     with con:
         cur = con.cursor()
-        cur.execute("""INSERT INTO users
-                          (id, log, pass)
-                          VALUES
-                          (1, 'alex', 'alex');""")
-        con.commit()
+        
         sqlite_select_query = """SELECT * from users"""
         cur.execute(sqlite_select_query)
         records = cur.fetchall()
