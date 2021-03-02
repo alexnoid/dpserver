@@ -27,6 +27,7 @@ WHERE NOT EXISTS(SELECT 1 FROM users WHERE id = 1 AND log = 'alex' AND pass = 'a
             bd_log = record[1];
             bd_pas = record[2];
         if log == bd_log and pas == bd_pas:
+            print(pas)
             return "hrenota"
     return "zaebis"
 
