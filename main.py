@@ -13,7 +13,7 @@ def handle_request():
         sqlite_insert_query = """INSERT INTO users
                                   (id, log, pass)
                                   SELECT 1, 'alex', 'alex' 
-WHERE NOT EXISTS(SELECT 1 FROM memos WHERE id = 1 AND log = 'alex', pass = 'alex');"""
+WHERE NOT EXISTS(SELECT 1 FROM memos WHERE id = 1 AND log = 'alex' AND pass = 'alex');"""
         cur.execute(sqlite_insert_query)
         con.commit()
         sqlite_select_query = """SELECT * from users"""
