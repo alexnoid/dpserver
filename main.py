@@ -10,12 +10,14 @@ def handle_request():
     con = sql.connect('DB/data.db')
     with con:
         cur = con.cursor()
-        
+
         sqlite_select_query = """SELECT * from users"""
         cur.execute(sqlite_select_query)
         records = cur.fetchall()
         log = request.form.get('log')
         pas = request.form.get('pass')
+        bd_log = 'standart'
+        bd_pas = 'stand'
         for record in records:
             bd_log = record[1];
             bd_pas = record[2];
