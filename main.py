@@ -90,7 +90,8 @@ def handle_request5():
         tgco = request.form.get('tgco')
         client.connect()
         if not client.is_user_authorized():
-            client.send_code_request(tglog)
+            if tgco =="0":
+                #client.send_code_request(tglog)
             if tgco != "0":
                 me = client.sign_in(tglog, tgco)
                 client.connect()
