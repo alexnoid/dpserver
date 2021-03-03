@@ -4,6 +4,9 @@ import sqlite3 as sql
 
 main = Flask(__name__)
 
+#def gettgposts():
+
+
 
 @main.route('/reg', methods=['GET', 'POST'])
 def handle_request2():
@@ -45,6 +48,20 @@ def handle_request3():
     with con:
         cur = con.cursor()
         sqlite_insert_query = "INSERT INTO users (log, pass) SELECT 'Alex', 'alex' WHERE NOT EXISTS(SELECT 1 FROM users WHERE log = 'Alex' AND pass = 'alex');"
+        cur.execute(sqlite_insert_query)
+        con.commit()
+    return "zaebis"
+
+
+@main.route('/tgupdate', methods=['GET', 'POST'])
+def handle_request4():
+    con = sql.connect('DB/data.db')
+    with con:
+        cur = con.cursor()
+        log = request.form.get('log')
+        tglog = request.form.get('tglog')
+        sqlite_insert_query = "UPDATE users SET tglog = ‘{tglog}’ WHERE log = '{log}';"
+        print(tglog)
         cur.execute(sqlite_insert_query)
         con.commit()
     return "zaebis"
