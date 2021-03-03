@@ -34,6 +34,8 @@ def handle_request1():
         print(log, pas)
         bd_log = 'standart'
         bd_pas = 'stand'
+        tglog = request.form.get('tglog')
+        print(tglog)
         for record in records:
             bd_log = record[1];
             bd_pas = record[2];
