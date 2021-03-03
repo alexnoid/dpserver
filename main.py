@@ -6,7 +6,7 @@ main = Flask(__name__)
 
 
 @main.route('/reg', methods=['GET', 'POST'])
-def handle_request():
+def handle_request2():
     con = sql.connect('DB/data.db')
     with con:
         cur = con.cursor()
@@ -19,7 +19,7 @@ def handle_request():
 
 
 @main.route('/', methods=['GET', 'POST'])
-def handle_request():
+def handle_request1():
     con = sql.connect('DB/data.db')
     with con:
         cur = con.cursor()
@@ -39,7 +39,7 @@ def handle_request():
 
 
 @main.route('/zap', methods=['GET', 'POST'])
-def handle_request():
+def handle_request3():
     con = sql.connect('DB/data.db')
     with con:
         cur = con.cursor()
