@@ -37,6 +37,7 @@ def handle_request():
             return "zaebis"
     return "hrenota"
 
+
 @main.route('/zap', methods=['GET', 'POST'])
 def handle_request():
     con = sql.connect('DB/data.db')
