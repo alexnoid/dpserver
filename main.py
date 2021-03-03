@@ -28,6 +28,7 @@ def handle_request1():
         records = cur.fetchall()
         log = request.form.get('log')
         pas = request.form.get('pass')
+        print(log, pas)
         bd_log = 'standart'
         bd_pas = 'stand'
         for record in records:
