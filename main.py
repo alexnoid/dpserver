@@ -81,9 +81,8 @@ def handle_request5():
         records = cur.fetchall()
         bd_log = 'standart'
         bd_pas = 'stand'
-        tglog='none'
-        for record in records:
-            tglog = record[3];
+        tglog='+375447022103'
+
         api_id = 3070588
         api_hash = 'd672e46b2442ba3d680075bed9788121'
 
@@ -91,13 +90,11 @@ def handle_request5():
         tgco = request.form.get('tgco')
         assert client.connect()
         if not client.is_user_authorized():
+            client.send_code_request(tglog)
             if tgco != "0":
-                client.send_code_request(tglog)
                 me = client.sign_in(tglog, tgco)
                 for dialog in client.iter_dialogs():
                     print(dialog.title)
-
-
     return "zaebis"
 
 
