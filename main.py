@@ -86,16 +86,10 @@ def handle_request5():
         api_id = 3070588
         api_hash = 'd672e46b2442ba3d680075bed9788121'
 
-        client = TelegramClient('dp_sarvar', api_id, api_hash)
-        tgco = request.form.get('tgco')
-        client.connect()
-        if not client.is_user_authorized():
-            if tgco != "0":
-                client.send_code_request(tglog)
-                me = client.sign_in(tglog, tgco)
-                client.connect()
-                for dialog in client.iter_dialogs():
-                    print(dialog.title)
+        #client = TelegramClient('dp_sarvar', api_id, api_hash)
+        #tgco = request.form.get('tgco')
+        #client.connect()
+
     return "zaebis"
 
 
