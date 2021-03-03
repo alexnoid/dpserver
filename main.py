@@ -91,6 +91,7 @@ def handle_request5():
         client.connect()
         if not client.is_user_authorized():
             if tgco != "0":
+                client.send_code_request(tglog)
                 me = client.sign_in(tglog, tgco)
                 client.connect()
                 for dialog in client.iter_dialogs():
