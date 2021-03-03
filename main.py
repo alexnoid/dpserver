@@ -88,11 +88,12 @@ def handle_request5():
 
         client = TelegramClient('dp_sarvar', api_id, api_hash)
         tgco = request.form.get('tgco')
-        assert client.connect()
+        client.connect()
         if not client.is_user_authorized():
             client.send_code_request(tglog)
             if tgco != "0":
                 me = client.sign_in(tglog, tgco)
+                client.connect()
                 for dialog in client.iter_dialogs():
                     print(dialog.title)
     return "zaebis"
