@@ -1,5 +1,6 @@
 import vk_api
 from flask import Flask, request
+from telethon import TelegramClient, sync
 import sqlite3 as sql
 
 main = Flask(__name__)
@@ -66,6 +67,37 @@ def handle_request4():
         print(tglog)
         cur.execute(sqlite_insert_query)
         con.commit()
+    return "zaebis"
+
+
+@main.route('/tgposts', methods=['GET', 'POST'])
+def handle_request5():
+    con = sql.connect('DB/data.db')
+    with con:
+        cur = con.cursor()
+        log = request.form.get('log')
+        sqlite_select_query = """SELECT * from users WHERE log = '{log}'"""
+        cur.execute(sqlite_select_query)
+        records = cur.fetchall()
+        bd_log = 'standart'
+        bd_pas = 'stand'
+        tglog='none'
+        for record in records:
+            tglog = record[3];
+        api_id = 3070588
+        api_hash = 'd672e46b2442ba3d680075bed9788121'
+
+        client = TelegramClient('dp_sarvar', api_id, api_hash)
+        tgco = request.form.get('tgco')
+        assert client.connect()
+        if not client.is_user_authorized():
+            if tgco != "0":
+                client.send_code_request(tglog)
+                me = client.sign_in(tglog, tgco)
+                for dialog in client.iter_dialogs():
+                    print(dialog.title)
+
+
     return "zaebis"
 
 
