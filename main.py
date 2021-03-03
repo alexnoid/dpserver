@@ -5,30 +5,17 @@ import sqlite3 as sql
 main = Flask(__name__)
 
 
-@main.route('/', methods=['GET', 'POST'])
+@main.route('/reg', methods=['GET', 'POST'])
 def handle_request():
     con = sql.connect('DB/data.db')
     with con:
         cur = con.cursor()
-        sqlite_insert_query = """INSERT INTO users
-                                  (id, log, pass)
-                                  SELECT 1, 'alex', 'alex' 
-WHERE NOT EXISTS(SELECT 1 FROM users WHERE id = 1 AND log = 'alex' AND pass = 'alex');"""
-        cur.execute(sqlite_insert_query)
-        con.commit()
-        sqlite_select_query = """SELECT * from users"""
-        cur.execute(sqlite_select_query)
-        records = cur.fetchall()
         log = request.form.get('log')
         pas = request.form.get('pass')
-        bd_log = 'standart'
-        bd_pas = 'stand'
-        for record in records:
-            bd_log = record[1];
-            bd_pas = record[2];
-        if log == bd_log and pas == bd_pas:
-            return "zaebis"
-    return "hrenota"
+        sqlite_insert_query = "INSERT INTO users (log, pass) SELECT '{log}', '{pas}' WHERE NOT EXISTS(SELECT 1 FROM users WHERE log = '{log}' AND pass = '{pas}');"
+        cur.execute(sqlite_insert_query)
+        con.commit()
+    return "zaebis"
 
 
 import os
