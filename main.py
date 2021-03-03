@@ -62,7 +62,7 @@ def handle_request4():
         cur = con.cursor()
         log = request.form.get('log')
         tglog = request.form.get('tglog')
-        sqlite_insert_query = "UPDATE users SET tglog = ‘{tglog}’ WHERE log = '{log}';"
+        sqlite_insert_query = "UPDATE users SET tglog = '{tglog}' WHERE log = '{log}';"
         print(tglog)
         cur.execute(sqlite_insert_query)
         con.commit()
