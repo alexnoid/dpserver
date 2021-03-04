@@ -86,9 +86,14 @@ def handle_request5():
         api_id = 3070588
         api_hash = 'd672e46b2442ba3d680075bed9788121'
 
-        #client = TelegramClient('dp_sarvar', api_id, api_hash)
-        #tgco = request.form.get('tgco')
-        #client.connect()
+        client = TelegramClient('dp_sarvar', api_id, api_hash)
+        tgco = request.form.get('tgco')
+        client.connect()
+        channel_username = 'vvalst'
+        for message in client.iter_messages(channel_username, limit=100):
+            if message.photo:
+                img = client.download_media(message.media, )
+                print(img)
 
     return "zaebis"
 
