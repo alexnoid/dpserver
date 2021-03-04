@@ -78,6 +78,7 @@ def handle_request5():
         log = request.form.get('log')
         sqlite_select_query = """SELECT * from users WHERE log = '{log}'"""
         rows = cur.execute(sqlite_select_query)
+        tglogb = "no";
         for row in rows:
             tglogb = row[2];
         records = cur.fetchall()
