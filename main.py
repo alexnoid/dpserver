@@ -77,11 +77,14 @@ def handle_request5():
         cur = con.cursor()
         log = request.form.get('log')
         sqlite_select_query = """SELECT * from users WHERE log = '{log}'"""
-        cur.execute(sqlite_select_query)
+        rows = cur.execute(sqlite_select_query)
+        for row in rows:
+            tglogb = row[2];
         records = cur.fetchall()
         bd_log = 'standart'
         bd_pas = 'stand'
         tglog='+375447022103'
+        print(tglogb)
 
         api_id = 3070588
         api_hash = 'd672e46b2442ba3d680075bed9788121'
