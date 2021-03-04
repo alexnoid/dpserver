@@ -80,33 +80,39 @@ def handle_request4():
 
 @main.route('/tgposts', methods=['GET', 'POST'])
 def handle_request5():
-    con = sql.connect('DB/data.db')
-    with con:
-        cur = con.cursor()
-        log = request.form.get('log')
-        sqlite_select_query = """SELECT * from users WHERE log = '{log}'"""
-        rows = cur.execute(sqlite_select_query)
-        tglogb = "no";
-        for row in rows:
-            tglogb = row[2];
-        records = cur.fetchall()
-        bd_log = 'standart'
-        bd_pas = 'stand'
-        tglog='+375447022103'
-        print(tglogb)
+    try:
+        con = sql.connect('DB/data.db')
+        with con:
+            cur = con.cursor()
+            log = request.form.get('log')
+            sqlite_select_query = """SELECT * from users WHERE log = '{log}'"""
+            rows = cur.execute(sqlite_select_query)
+            tglogb = "no";
+            for row in rows:
+                tglogb = row[2];
+            records = cur.fetchall()
+            bd_log = 'standart'
+            bd_pas = 'stand'
+            tglog='+375447022103'
+            print(tglogb)
 
-        api_id = 3070588
-        api_hash = 'd672e46b2442ba3d680075bed9788121'
+            api_id = 3070588
+            api_hash = 'd672e46b2442ba3d680075bed9788121'
 
-        client = TelegramClient('dp_sarvar', api_id, api_hash)
-        tgco = request.form.get('tgco')
-        client.connect()
-        channel_username = 'vvalst'
-        for message in client.iter_messages(channel_username, limit=100):
-            if message.photo:
-                img = client.download_media(message.media, )
-                print(img)
-
+            client = TelegramClient('dp_sarvar', api_id, api_hash)
+            tgco = request.form.get('tgco')
+            client.connect()
+            channel_username = 'vvalst'
+            for message in client.iter_messages(channel_username, limit=100):
+                if message.photo:
+                    img = client.download_media(message.media, )
+                    print(img)
+    except sql.Error as error:
+        print("Error while connecting to sqlite", error)
+    finally:
+        if (sql.Connection):
+            con.close()
+            print("The SQLite connection is closed")
     return "zaebis"
 
 
