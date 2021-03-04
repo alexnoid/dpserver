@@ -91,6 +91,7 @@ def handle_request5():
             for row in rows:
                 tglogb = row[2];
             records = cur.fetchall()
+            cur.close()
             bd_log = 'standart'
             bd_pas = 'stand'
             tglog='+375447022103'
