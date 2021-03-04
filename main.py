@@ -67,7 +67,7 @@ def handle_request4():
         print(tglog)
         cur.execute(sqlite_insert_query)
         con.commit()
-        con.close()
+    con.close()
     return "zaebis"
 
 
