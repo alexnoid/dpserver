@@ -1,5 +1,6 @@
 import vk_api
 from flask import Flask, request
+import json
 from telethon import TelegramClient, sync
 import sqlite3 as sql
 
@@ -54,6 +55,20 @@ def handle_request3():
         cur.execute(sqlite_insert_query)
         con.commit()
     return "zaebis"
+
+
+@main.route('/jason', methods=['GET', 'POST'])
+def handle_request10():
+    data = {}
+    data['messages'] = []
+    data['messages'].append({
+        'id': 'Scott',
+        'photo.id': 'stackabuse.com',
+        'text': 'Nebraska'
+    })
+    with open("data_file.json", "w+") as write_file:
+        json.dump(data, write_file)
+    return json.dumps(data)
 
 
 @main.route('/tgupdate', methods=['GET', 'POST'])
