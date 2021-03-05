@@ -1,5 +1,5 @@
 import vk_api
-from flask import Flask, request
+from flask import Flask, request, jsonify
 import json
 from telethon import TelegramClient, sync
 import sqlite3 as sql
@@ -68,7 +68,7 @@ def handle_request10():
     })
     with open("data_file.json", "w+") as write_file:
         json.dump(data, write_file)
-    return json.dumps(data)
+    return jsonify(data)
 
 
 @main.route('/tgupdate', methods=['GET', 'POST'])
