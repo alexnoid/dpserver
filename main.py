@@ -60,18 +60,18 @@ def handle_request3():
 @main.route('/jason', methods=['GET', 'POST'])
 def handle_request10():
     data = {}
-    # data['messages'] = []
-    # data['messages'].append({
-    #     'id': 'Scott',
-    #     'photo.id': 'stackabuse.com',
-    #     'text': 'Nebraska'
-    # })
-    data = {
-        "president": {
-            "name": "Zaphod Beeblebrox",
-            "species": "Betelgeusian"
-        }
-    }
+    data['messages'] = []
+    data['messages'].append({
+        'id': 'Scott',
+        'photo.id': 'stackabuse.com',
+        'text': 'Nebraska'
+    })
+    # data = {
+    #     "president": {
+    #         "name": "Zaphod Beeblebrox",
+    #         "species": "Betelgeusian"
+    #     }
+    # }
     with open("data_file.json", "w+") as write_file:
         json.dump(data, write_file)
     print(data)
