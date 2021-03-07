@@ -102,7 +102,7 @@ def handle_request4():
 
 @main.route('/uploads/<path:filename>')
 def download_file(filename):
-    return send_from_directory(filename, as_attachment=True)
+    return send_from_directory("pic", filename, as_attachment=True)
 
 
 @main.route('/tgposts', methods=['GET', 'POST'])
