@@ -1,5 +1,5 @@
 import vk_api
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_file
 import json
 from telethon import TelegramClient, sync
 import sqlite3 as sql
@@ -98,6 +98,15 @@ def handle_request4():
             con.close()
             print("The SQLite connection is closed")
     return "zaebis"
+
+
+@app.route('/get_image')
+def get_image():
+    if request.args.get('type') == 'izo1':
+       filename = 'izo1.png'
+    else:
+       filename = 'error.gif'
+    return send_file(filename, mimetype='image/gif')
 
 
 @main.route('/tgposts', methods=['GET', 'POST'])
