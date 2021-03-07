@@ -4,7 +4,7 @@ import json
 from telethon import TelegramClient, sync
 import sqlite3 as sql
 
-main = Flask(__name__)
+main = Flask(__name__,static_folder="pic")
 
 #def gettgposts():
 
