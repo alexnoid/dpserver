@@ -100,9 +100,13 @@ def handle_request4():
     return "zaebis"
 
 
-@main.route('/uploads/<path:filename>')
-def download_file(filename):
-    return send_from_directory("pic", filename, as_attachment=True)
+@main.route('/get_image')
+def get_image():
+    if request.args.get('type') == '1':
+       filename = 'izo1.png'
+    else:
+       filename = 'izo1.png'
+    return send_file(filename, mimetype='image/png')
 
 
 @main.route('/tgposts', methods=['GET', 'POST'])
