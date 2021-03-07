@@ -1,5 +1,5 @@
 import vk_api
-from flask import Flask, request, jsonify, send_file
+from flask import Flask, request, jsonify, send_file, send_from_directory
 import json
 from telethon import TelegramClient, sync
 import sqlite3 as sql
@@ -100,13 +100,9 @@ def handle_request4():
     return "zaebis"
 
 
-@main.route('/get_image')
-def get_image():
-    if request.args.get('type') == 'izo1':
-       filename = 'izo1.png'
-    else:
-       filename = 'error.gif'
-    return send_file(filename, mimetype='image/gif')
+@main.route('/uploads/<path:filename>')
+def download_file(filename):
+    return send_from_directory(filename, as_attachment=True)
 
 
 @main.route('/tgposts', methods=['GET', 'POST'])
