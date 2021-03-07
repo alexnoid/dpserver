@@ -100,7 +100,7 @@ def handle_request4():
     return "zaebis"
 
 
-@app.route('/get_image')
+@main.route('/get_image')
 def get_image():
     if request.args.get('type') == 'izo1':
        filename = 'izo1.png'
