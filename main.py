@@ -68,11 +68,11 @@ def handle_request11():
 
 @main.route('/jason', methods=['GET', 'POST'])
 def handle_request10():
-    api_id = 3070588
-    api_hash = 'd672e46b2442ba3d680075bed9788121'
-
-    client = TelegramClient('dp_sarvar', api_id, api_hash)
-    client.start()
+    # api_id = 3070588
+    # api_hash = 'd672e46b2442ba3d680075bed9788121'
+    #
+    # client = TelegramClient('dp_sarvar', api_id, api_hash)
+    # client.start()
     # x = [[d.unread_count, d.title] for d in client.get_dialogs() if not getattr(d.entity, 'is_private', False) and d.unread_count != 0]
     # print(client.get_me().stringify())
     channel_username = 'portablik'
