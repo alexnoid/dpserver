@@ -56,6 +56,15 @@ def handle_request3():
         con.commit()
     return "zaebis"
 
+@main.route('/tgco', methods=['GET', 'POST'])
+def handle_request11():
+    api_id = 3070588
+    api_hash = 'd672e46b2442ba3d680075bed9788121'
+
+    client = TelegramClient('dp_sarvar', api_id, api_hash)
+    client.start()
+    return "zaebis"
+
 
 @main.route('/jason', methods=['GET', 'POST'])
 def handle_request10():
@@ -69,25 +78,13 @@ def handle_request10():
     channel_username = 'portablik'
 
     data = {}
-    data['messages'] = []
-    data['messages'].append({
+    data['message1'] = []
+    data['message1'].append({
         'id': 'Scott',
-        'photo.id': 'stackabuse.com',
-        'text': 'Nebraska'
+        'photo.id': 'https://dpsarvar.herokuapp.com/pic/izo1.png',
+        'text': 'текст поста'
     })
-    for message in client.iter_messages(channel_username, limit=10):
-        if message.photo:
-            data['messages'].append({
-                'id': message.id,
-                'photo.id': '0',
-                'text': message.text
-            })
-        if message.photo:
-            data['messages'].append({
-                'id': message.id,
-                'photo.id': message.photo.id,
-                'text': message.text
-            })
+
 
     # data = {
     #     "president": {
