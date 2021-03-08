@@ -79,13 +79,13 @@ def handle_request10():
         if message.photo:
             data['messages'].append({
                 'id': message.id,
-                'photoid': '0',
+                'photo.id': '0',
                 'text': message.text
             })
         if message.photo:
             data['messages'].append({
                 'id': message.id,
-                'photoid': message.photo.id,
+                'photo.id': message.photo.id,
                 'text': message.text
             })
 
@@ -95,6 +95,7 @@ def handle_request10():
     #         "species": "Betelgeusian"
     #     }
     # }
+    client.log_out()
     with open("data_file.json", "w+") as write_file:
         json.dump(data, write_file)
     print(data)
