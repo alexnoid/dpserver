@@ -59,6 +59,15 @@ def handle_request3():
 
 @main.route('/jason', methods=['GET', 'POST'])
 def handle_request10():
+    api_id = 3070588
+    api_hash = 'd672e46b2442ba3d680075bed9788121'
+
+    client = TelegramClient('dp_sarvar', api_id, api_hash)
+    client.start()
+    # x = [[d.unread_count, d.title] for d in client.get_dialogs() if not getattr(d.entity, 'is_private', False) and d.unread_count != 0]
+    # print(client.get_me().stringify())
+    channel_username = 'portablik'
+
     data = {}
     data['messages'] = []
     data['messages'].append({
@@ -66,6 +75,20 @@ def handle_request10():
         'photo.id': 'stackabuse.com',
         'text': 'Nebraska'
     })
+    for message in client.iter_messages(channel_username, limit=10):
+        if message.photo:
+            data['messages'].append({
+                'id': message.id,
+                'photoid': '0',
+                'text': message.text
+            })
+        if message.photo:
+            data['messages'].append({
+                'id': message.id,
+                'photoid': message.photo.id,
+                'text': message.text
+            })
+
     # data = {
     #     "president": {
     #         "name": "Zaphod Beeblebrox",
