@@ -92,6 +92,7 @@ def handle_request10():
     # })
     i = 0
     for message in client.iter_messages(channel_username, limit=10):
+        data['message'+str(i)] = []
         if not message.photo:
             data['message'+str(i)].append({
                 'id': message.id,
