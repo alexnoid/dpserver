@@ -98,7 +98,7 @@ def handle_request10():
         data['message'+str(i)].append({
             'id': message.id,
             'photoid': '0',
-            'text': message.text
+            'text': str(message.text)
         })
         i+1
 
