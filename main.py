@@ -1,4 +1,5 @@
 import vk_api
+from PIL import Image
 from flask import Flask, request, jsonify, send_file, send_from_directory
 import json
 from telethon import TelegramClient, sync
@@ -8,6 +9,7 @@ main = Flask(__name__,static_folder="pic")
 
 #def gettgposts():
 
+a = []
 
 
 @main.route('/reg', methods=['GET', 'POST'])
@@ -100,10 +102,10 @@ def handle_request10():
                 'text': message.text
             })
         if message.photo:
-            client.download_media(message.photo, "/pic/"+str(message.photo.id)+'.png')
+            a.append(Image.open(message.photo))
             data['message'+str(i)].append({
                 'id': message.id,
-                'photoid': 'https://dpsarvar.herokuapp.com/pic/'+str(message.photo.id)+'.png',
+                'photoid': 'https://dpsarvar.herokuapp.com/get_image?type='+str(a.count()),
                 'text': message.text
             })
         i+1
@@ -146,11 +148,8 @@ def handle_request4():
 
 @main.route('/get_image')
 def get_image():
-    if request.args.get('type') == '1':
-       filename = 'izo1.png'
-    else:
-       filename = 'izo1.png'
-    return send_file(filename, mimetype='image/png')
+    type = request.args.get('type')
+    return a[int(type)]
 
 
 @main.route('/tgposts', methods=['GET', 'POST'])
