@@ -109,7 +109,7 @@ def handle_request10():
     #         "species": "Betelgeusian"
     #     }
     # }
-#    client.log_out()
+    client.log_out()
     with open("data_file.json", "w+") as write_file:
         json.dump(data, write_file)
     print(data)
