@@ -60,30 +60,53 @@ def handle_request3():
 def handle_request11():
     api_id = 3070588
     api_hash = 'd672e46b2442ba3d680075bed9788121'
-
+    number = request.form.get('tglog')
     client = TelegramClient('dp_sarvar', api_id, api_hash)
-    client.start()
+    client.connect()
+    if not client.is_user_authorized():
+        client.send_code_request(number)
+    client.log_out();
     return "zaebis"
 
 
 @main.route('/jason', methods=['GET', 'POST'])
 def handle_request10():
-    # api_id = 3070588
-    # api_hash = 'd672e46b2442ba3d680075bed9788121'
-    #
-    # client = TelegramClient('dp_sarvar', api_id, api_hash)
-    # client.start()
+    api_id = 3070588
+    api_hash = 'd672e46b2442ba3d680075bed9788121'
+    number = request.form.get('tglog')
+    co = request.form.get('tgco')
+    client = TelegramClient('dp_sarvar', api_id, api_hash)
+    client.start()
+    if not client.is_user_authorized():
+        client.send_code_request(number)
+    me = client.sign_in(number, co)
     # x = [[d.unread_count, d.title] for d in client.get_dialogs() if not getattr(d.entity, 'is_private', False) and d.unread_count != 0]
     # print(client.get_me().stringify())
     channel_username = 'portablik'
 
     data = {}
     data['message1'] = []
-    data['message1'].append({
-        'id': 'Scott',
-        'photo.id': 'https://dpsarvar.herokuapp.com/pic/izo1.png',
-        'text': 'текст поста'
-    })
+    # data['message1'].append({
+    #     'id': 'Scott',
+    #     'photo.id': 'https://dpsarvar.herokuapp.com/pic/izo1.png',
+    #     'text': 'текст поста'
+    # })
+    i = 0
+    for message in client.iter_messages(channel_username, limit=10):
+        if not message.photo:
+            data['message'+str(i)].append({
+                'id': message.id,
+                'photoid': '0',
+                'text': message.text
+            })
+        if message.photo:
+            client.download_media(message.photo, "/pic/"+str(message.photo.id)+'.png')
+            data['message'+str(i)].append({
+                'id': message.id,
+                'photoid': 'https://dpsarvar.herokuapp.com/pic/'+str(message.photo.id)+'.png',
+                'text': message.text
+            })
+        i+1
 
 
     # data = {
