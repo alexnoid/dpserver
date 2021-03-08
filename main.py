@@ -77,6 +77,7 @@ def handle_request10():
     co = request.form.get('tgco')
     client = TelegramClient('dp_sarvar', api_id, api_hash)
     client.connect()
+    client.send_code_request(number)
     me = client.sign_in(number, co)
     # x = [[d.unread_count, d.title] for d in client.get_dialogs() if not getattr(d.entity, 'is_private', False) and d.unread_count != 0]
     # print(client.get_me().stringify())
