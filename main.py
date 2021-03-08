@@ -95,19 +95,11 @@ def handle_request10():
     i = 0
     for message in client.iter_messages(channel_username, limit=10):
         data['message'+str(i)] = []
-        if not message.photo:
-            data['message'+str(i)].append({
-                'id': message.id,
-                'photoid': '0',
-                'text': message.text
-            })
-        if message.photo:
-            a.append(Image.open(message.photo))
-            data['message'+str(i)].append({
-                'id': message.id,
-                'photoid': 'https://dpsarvar.herokuapp.com/get_image?type='+str(a.count()),
-                'text': message.text
-            })
+        data['message'+str(i)].append({
+            'id': message.id,
+            'photoid': '0',
+            'text': message.text
+        })
         i+1
 
 
