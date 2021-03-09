@@ -12,6 +12,19 @@ main = Flask(__name__,static_folder="pic")
 a = []
 
 
+def captcha_handler(captcha):
+    """ При возникновении капчи вызывается эта функция и ей передается объект
+        капчи. Через метод get_url можно получить ссылку на изображение.
+        Через метод try_again можно попытаться отправить запрос с кодом капчи
+    """
+
+    key = input("Enter captcha code {0}: ".format(captcha.get_url())).strip()
+
+    # Пробуем снова отправить запрос с капчей
+    return captcha.try_again(key)
+
+
+
 @main.route('/reg', methods=['GET', 'POST'])
 def handle_request2():
     con = sql.connect('DB/data.db')
@@ -86,7 +99,6 @@ def handle_request10():
     channel_username = 'portablik'
 
     data = {}
-    data['message1'] = []
     # data['message1'].append({
     #     'id': 'Scott',
     #     'photo.id': 'https://dpsarvar.herokuapp.com/pic/izo1.png',
@@ -113,9 +125,11 @@ def handle_request10():
     posts = vk.newsfeed.get()
 
     post = posts['items']
+    i =0
     for post4 in post:
-
+        i+1
         if 'attachments' in post4:
+            data['message'+str(i)] = []
             print('Нет')
             posta = post4['attachments']
             photo = posta[0]
