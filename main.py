@@ -113,16 +113,19 @@ def handle_request10():
     posts = vk.newsfeed.get()
 
     post = posts['items']
-    post4 = post[4]
-    posta = post4['attachments']
-    photo = posta[0]
-    sizes = photo['photo']
-    sizes1 = sizes['sizes']
-    size4 = sizes1[4]
-    data['message1'].append({
-        'id': 'Scott',
-        'photo.id': size4['url'],
-        'text': 'текст поста'
+    for post4 in post:
+
+        if 'attachments' in post4:
+            print('Нет')
+            posta = post4['attachments']
+            photo = posta[0]
+            sizes = photo['photo']
+            sizes1 = sizes['sizes']
+            size4 = sizes1[4]
+            data['message1'].append({
+                'id': 'Scott',
+                'photo.id': size4['url'],
+                'text': 'текст поста'
     })
 
     # data = {
