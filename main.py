@@ -73,14 +73,14 @@ def handle_request11():
 
 @main.route('/jason', methods=['GET', 'POST'])
 def handle_request10():
-    api_id = 3070588
-    api_hash = 'd672e46b2442ba3d680075bed9788121'
-    number = request.form.get('tglog')
-    co = request.form.get('tgco')
-    client = TelegramClient('dp_sarvar', api_id, api_hash)
-    client.connect()
-    client.send_code_request(number)
-    me = client.sign_in(number, co)
+    # api_id = 3070588
+    # api_hash = 'd672e46b2442ba3d680075bed9788121'
+    # number = request.form.get('tglog')
+    # co = request.form.get('tgco')
+    # client = TelegramClient('dp_sarvar', api_id, api_hash)
+    # client.connect()
+    # client.send_code_request(number)
+    # me = client.sign_in(number, co)
     # x = [[d.unread_count, d.title] for d in client.get_dialogs() if not getattr(d.entity, 'is_private', False) and d.unread_count != 0]
     # print(client.get_me().stringify())
     channel_username = 'portablik'
@@ -93,15 +93,37 @@ def handle_request10():
     #     'text': 'текст поста'
     # })
     i = 0
-    for message in client.iter_messages(channel_username, limit=10):
-        data['message'+str(i)] = []
-        data['message'+str(i)].append({
-            'id': message.id,
-            'photoid': '0',
-            'text': str(message.text)
-        })
-        i+1
+    # for message in client.iter_messages(channel_username, limit=10):
+    #     data['message'+str(i)] = []
+    #     data['message'+str(i)].append({
+    #         'id': message.id,
+    #         'photoid': '0',
+    #         'text': str(message.text)
+    #     })
+    #     i+1
 
+    number = request.form.get('tglog')
+    co = request.form.get('tgco')
+
+    vk_session = vk_api.VkApi(number, co)
+    vk_session.auth()
+
+    vk = vk_session.get_api()
+
+    posts = vk.newsfeed.get()
+
+    post = posts['items']
+    post4 = post[4]
+    posta = post4['attachments']
+    photo = posta[0]
+    sizes = photo['photo']
+    sizes1 = sizes['sizes']
+    size4 = sizes1[4]
+    data['message1'].append({
+        'id': 'Scott',
+        'photo.id': size4['url'],
+        'text': 'текст поста'
+    })
 
     # data = {
     #     "president": {
@@ -109,7 +131,7 @@ def handle_request10():
     #         "species": "Betelgeusian"
     #     }
     # }
-    client.log_out()
+    # client.log_out()
     with open("data_file.json", "w+") as write_file:
         json.dump(data, write_file)
     print(data)

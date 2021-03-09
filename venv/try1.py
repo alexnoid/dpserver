@@ -60,23 +60,21 @@ if __name__ == "__main__":
 """
 import vk_api
 import json
-from http.server import BaseHTTPRequestHandler,HTTPServer
 
-class HttpProcessor(BaseHTTPRequestHandler):
-    def do_GET(self):
-        self.send_response(200)
-        self.send_header('content-type','text/html')
-        self.end_headers()
-        self.wfile.write("hello !")
-
-serv = HTTPServer(("localhost",80),HttpProcessor)
-serv.serve_forever()
 vk_session = vk_api.VkApi('+375447022103', '6626816')
 vk_session.auth()
 
 vk = vk_session.get_api()
 
 posts = vk.newsfeed.get(start_from='50/5')
+post = posts['items']
+post4 = post[4]
+posta = post4['attachments']
+photo = posta[0]
+sizes = photo['photo']
+sizes1 = sizes['sizes']
+size4 = sizes1[4]
+print(size4['url'])
 
 #with open('data.json', 'w', encoding='utf-8') as f:
 #    json.dump(posts, f, ensure_ascii=False, indent=4)
