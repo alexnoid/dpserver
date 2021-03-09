@@ -69,12 +69,12 @@ vk = vk_session.get_api()
 posts = vk.newsfeed.get(start_from='50/5')
 post = posts['items']
 post4 = post[4]
-posta = post4['attachments']
-photo = posta[0]
-sizes = photo['photo']
-sizes1 = sizes['sizes']
-size4 = sizes1[4]
-print(size4['url'])
+# posta = post4['attachments']
+# photo = posta[0]
+# sizes = photo['photo']
+# sizes1 = sizes['sizes']
+# size4 = sizes1[4]
+print(post4['text'])
 
 #with open('data.json', 'w', encoding='utf-8') as f:
 #    json.dump(posts, f, ensure_ascii=False, indent=4)

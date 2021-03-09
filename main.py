@@ -123,7 +123,7 @@ def handle_request10():
             sizes1 = sizes['sizes']
             size4 = sizes1[4]
             data['message1'].append({
-                'id': 'Scott',
+                'id': post4['text'],
                 'photo.id': size4['url'],
                 'text': 'текст поста'
     })
