@@ -127,6 +127,7 @@ def handle_request10():
                 'photo.id': size4['url'],
                 'text': 'текст поста'
     })
+            break
 
     # data = {
     #     "president": {
