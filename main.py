@@ -130,6 +130,7 @@ def handle_request10():
         i+1
         if 'attachments' in post4:
             data['message'+str(i)] = []
+            data['message'+str(i)] = []
             print('Нет')
             posta = post4['attachments']
             photo = posta[0]
