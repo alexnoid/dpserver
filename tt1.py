@@ -14,5 +14,5 @@ def execute_statement(statement):
 log = "оааоао"
 pas = "ytbptcnty"
 #string.Template('hanning${num}.pdf').substitute(locals()))
-query = f"UPDATE users SET vklog = '{log}', vkpass = '{pas}' WHERE log = 'log';"
+query = f"select * from users"
 print(execute_statement(query))

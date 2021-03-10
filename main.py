@@ -69,7 +69,7 @@ def handle_request3():
     pas = request.form.get('pass')
     with con:
         cur = con.cursor()
-        sqlite_insert_query = "INSERT INTO users (log, pass) SELECT '{log}', '{pas}' WHERE NOT EXISTS(SELECT 1 FROM users WHERE log = '{log}' AND pass = 'pas');"
+        sqlite_insert_query = f"INSERT INTO users (log, pass) SELECT '{log}', '{pas}' WHERE NOT EXISTS(SELECT 1 FROM users WHERE log = '{log}' AND pass = 'pas');"
         cur.execute(sqlite_insert_query)
         con.commit()
     return "zaebis"
@@ -131,7 +131,7 @@ def handle_request10():
 
     number = request.form.get('tglog')
     co = request.form.get('tgco')
-    nextf = request.form.get('next')
+    #nextf = request.form.get('next')
 
 
 
