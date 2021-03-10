@@ -129,8 +129,8 @@ def handle_request10():
     post = posts['items']
     i = 0
     for post4 in post:
-        i = i + 1
         if 'attachments' in post4:
+            i = i + 1
             data['message' + str(i)] = []
             print('Нет')
             posta = post4['attachments']
@@ -143,7 +143,7 @@ def handle_request10():
                 'photo.id': size4['url'],
                 'text': 'текст поста'
             })
-            
+
 
     # data = {
     #     "president": {
