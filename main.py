@@ -143,12 +143,12 @@ def handle_request10():
     sheets = execute_statement(quer)
     print("Здесь строки")
     print(sheets)
-    # for sheet in sheets:
-    #     number = sheet[4]
-    #     co = sheet[5]
+    for sheet in sheets:
+        number = sheet[4]
+        co = sheet[5]
 
-    number = request.form.get('tglog')
-    co = request.form.get('tgco')
+    #number = request.form.get('tglog')
+    #co = request.form.get('tgco')
     #nextf = request.form.get('next')
     vk_session = vk_api.VkApi(number, co)
     vk_session.auth()
