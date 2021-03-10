@@ -149,12 +149,12 @@ def handle_request10():
 
     #number = request.form.get('tglog')
     #co = request.form.get('tgco')
-    #nextf = request.form.get('next')
+    nextf = request.form.get('next')
     vk_session = vk_api.VkApi(number, co)
     vk_session.auth()
     vk = vk_session.get_api()
-    #posts = vk.newsfeed.get(start_from=nextf)
-    posts = vk.newsfeed.get()
+    posts = vk.newsfeed.get(start_from=nextf)
+    #posts = vk.newsfeed.get()
 
     post = posts['items']
     print(posts)
@@ -171,7 +171,7 @@ def handle_request10():
             data['message' + str(i)].append({
                 'id': post4['text'],
                 'photo.id': size4['url'],
-                'text': 'текст поста'
+                'text': 'vk'
             })
     data['next'] = []
     data['next'].append({
