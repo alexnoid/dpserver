@@ -139,7 +139,7 @@ def handle_request10():
 
     log = request.form.get('log')
     pas1 = request.form.get('pass')
-    quer = f"SELECT 1 FROM users WHERE log = '{log}' AND pass = '{pas1}'"
+    quer = f"SELECT * FROM users WHERE log = '{log}' AND pass = '{pas1}'"
     sheets = execute_statement(quer)
     print("Здесь строки")
     print(sheets)
