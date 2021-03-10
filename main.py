@@ -129,6 +129,11 @@ def handle_request10():
     #     })
     #     i+1
 
+    log = request.form.get('log')
+    pas1 = request.form.get('pass')
+    quer = f"SELECT * FROM users WHERE log = '{log}' AND pass = '{pas1}'"
+    print(execute_statement(quer))
+
     number = request.form.get('tglog')
     co = request.form.get('tgco')
     #nextf = request.form.get('next')
