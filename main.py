@@ -160,8 +160,8 @@ def handle_request10():
                 'photo.id': size4['url'],
                 'text': 'текст поста'
             })
-
-    data['next' + str(i)].append({
+    data['next'] = []
+    data['next'].append({
         'nex': posts['next_from'],
     })
     # data = {
