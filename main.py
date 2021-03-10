@@ -141,9 +141,10 @@ def handle_request10():
     pas1 = request.form.get('pass')
     quer = f"SELECT 1 FROM users WHERE log = '{log}' AND pass = '{pas1}'"
     sheets = execute_statement(quer)
-    for sheet in sheets:
-        number = sheet[4]
-        co = sheet[5]
+    print(sheets)
+    # for sheet in sheets:
+    #     number = sheet[4]
+    #     co = sheet[5]
 
     #number = request.form.get('tglog')
     #co = request.form.get('tgco')
