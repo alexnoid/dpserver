@@ -5,9 +5,9 @@ import json
 from telethon import TelegramClient, sync
 import sqlite3 as sql
 
-main = Flask(__name__,static_folder="pic")
+main = Flask(__name__, static_folder="pic")
 
-#def gettgposts():
+# def gettgposts():
 
 a = []
 
@@ -22,7 +22,6 @@ def captcha_handler(captcha):
 
     # Пробуем снова отправить запрос с капчей
     return captcha.try_again(key)
-
 
 
 @main.route('/reg', methods=['GET', 'POST'])
@@ -72,6 +71,7 @@ def handle_request3():
         cur.execute(sqlite_insert_query)
         con.commit()
     return "zaebis"
+
 
 @main.route('/tgco', methods=['GET', 'POST'])
 def handle_request11():
@@ -127,23 +127,23 @@ def handle_request10():
     posts = vk.newsfeed.get()
 
     post = posts['items']
-    i =0
+    i = 0
     for post4 in post:
-        i=i+1
+        i = i + 1
         if 'attachments' in post4:
-            data['message'+str(i)] = []
+            data['message' + str(i)] = []
             print('Нет')
             posta = post4['attachments']
             photo = posta[0]
             sizes = photo['photo']
             sizes1 = sizes['sizes']
             size4 = sizes1[4]
-            data['message'+str(i)].append({
+            data['message' + str(i)].append({
                 'id': post4['text'],
                 'photo.id': size4['url'],
                 'text': 'текст поста'
-    })
-            break
+            })
+            
 
     # data = {
     #     "president": {
@@ -202,7 +202,7 @@ def handle_request5():
             cur.close()
             bd_log = 'standart'
             bd_pas = 'stand'
-            tglog='+375447022103'
+            tglog = '+375447022103'
             print(tglogb)
 
             api_id = 3070588
@@ -226,6 +226,7 @@ def handle_request5():
 
 
 import os
+
 ON_HEROKU = os.environ.get('ON_HEROKU')
 if ON_HEROKU:
     # get the heroku port
@@ -233,16 +234,15 @@ if ON_HEROKU:
 else:
     port = 3000
 
-
 if __name__ == '__main__':
     main.run()
 
-#vk_session = vk_api.VkApi('+375447022103', '6626816')
-#vk_session.auth()
+# vk_session = vk_api.VkApi('+375447022103', '6626816')
+# vk_session.auth()
 
-#vk = vk_session.get_api()
+# vk = vk_session.get_api()
 
-#posts = vk.newsfeed.get()
+# posts = vk.newsfeed.get()
 
 # with open('data.json', 'w', encoding='utf-8') as f:
 #    json.dump(posts, f, ensure_ascii=False, indent=4)
