@@ -4,12 +4,22 @@ from flask import Flask, request, jsonify, send_file, send_from_directory
 import json
 from telethon import TelegramClient, sync
 import sqlite3 as sql
+import contextlib
 
 main = Flask(__name__, static_folder="pic")
 
 # def gettgposts():
 
 a = []
+
+
+def execute_statement(statement):
+    with contextlib.closing(sqlite3.connect('DB/data.db')) as conn: # auto-closes
+        with conn: # auto-commits
+            with contextlib.closing(conn.cursor()) as cursor: # auto-closes
+                cursor.execute(statement)
+                values = cursor.fetchall()
+                return values
 
 
 def captcha_handler(captcha):
@@ -26,35 +36,27 @@ def captcha_handler(captcha):
 
 @main.route('/reg', methods=['GET', 'POST'])
 def handle_request2():
-    con = sql.connect('DB/data.db')
-    with con:
-        cur = con.cursor()
-        log = request.form.get('log')
-        pas = request.form.get('pass')
-        sqlite_insert_query = "INSERT INTO users (log, pass) SELECT '{log}', '{pas}' WHERE NOT EXISTS(SELECT 1 FROM users WHERE log = '{log}' AND pass = '{pas}');"
-        cur.execute(sqlite_insert_query)
-        con.commit()
+    log = request.form.get('log')
+    pas = request.form.get('pass')
+    sqlite_insert_query = "INSERT INTO users (log, pass) SELECT '{log}', '{pas}' WHERE NOT EXISTS(SELECT 1 FROM users WHERE log = '{log}' AND pass = '{pas}');"
+    execute_statement(sqlite_insert_query)
     return "zaebis"
 
 
 @main.route('/', methods=['GET', 'POST'])
 def handle_request1():
-    con = sql.connect('DB/data.db')
-    with con:
-        cur = con.cursor()
-        sqlite_select_query = """SELECT * from users"""
-        cur.execute(sqlite_select_query)
-        records = cur.fetchall()
-        log = request.form.get('log')
-        pas = request.form.get('pass')
-        print(log, pas)
-        bd_log = 'standart'
-        bd_pas = 'stand'
-        tglog = request.form.get('tglog')
-        print(tglog)
-        for record in records:
-            bd_log = record[1];
-            bd_pas = record[2];
+    sqlite_select_query = """SELECT * from users"""
+    records = execute_statement(sqlite_select_query)
+    log = request.form.get('log')
+    pas = request.form.get('pass')
+    print(log, pas)
+    bd_log = 'standart'
+    bd_pas = 'stand'
+    tglog = request.form.get('tglog')
+    print(tglog)
+    for record in records:
+        bd_log = record[1];
+        bd_pas = record[2];
         if log == bd_log and pas == bd_pas:
             return "zaebis"
     return "hrenota"
@@ -67,7 +69,7 @@ def handle_request3():
     pas = request.form.get('pass')
     with con:
         cur = con.cursor()
-        sqlite_insert_query = "INSERT INTO users (log, pass) SELECT '{log}', '{pas}' WHERE NOT EXISTS(SELECT 1 FROM users WHERE log = 'Alex' AND pass = 'alex');"
+        sqlite_insert_query = "INSERT INTO users (log, pass) SELECT '{log}', '{pas}' WHERE NOT EXISTS(SELECT 1 FROM users WHERE log = '{log}' AND pass = 'pas');"
         cur.execute(sqlite_insert_query)
         con.commit()
     return "zaebis"
@@ -83,6 +85,17 @@ def handle_request11():
     if not client.is_user_authorized():
         client.send_code_request(number)
     client.log_out();
+    return "zaebis"
+
+@main.route('/vk', methods=['GET', 'POST'])
+def handle_request12():
+    vklog = request.form.get('tglog')
+    vkpas = request.form.get('tgco')
+    log = request.form.get('log')
+    query = f"UPDATE users SET vklog = '{vklog}', vkpass = '{vkpas}' WHERE log = '{log}';"
+    execute_statement(query)
+    query = "SELECT * FROM users"
+    print(execute_statement(query))
     return "zaebis"
 
 
@@ -118,21 +131,25 @@ def handle_request10():
 
     number = request.form.get('tglog')
     co = request.form.get('tgco')
+    nextf = request.form.get('next')
+
+
 
     vk_session = vk_api.VkApi(number, co)
     vk_session.auth()
 
     vk = vk_session.get_api()
 
+    #posts = vk.newsfeed.get(start_from=nextf)
     posts = vk.newsfeed.get()
 
     post = posts['items']
+    print(posts)
     i = 0
     for post4 in post:
         if 'attachments' in post4:
             i = i + 1
             data['message' + str(i)] = []
-            print('Нет')
             posta = post4['attachments']
             photo = posta[0]
             sizes = photo['photo']
@@ -144,7 +161,9 @@ def handle_request10():
                 'text': 'текст поста'
             })
 
-
+    data['next' + str(i)].append({
+        'nex': posts['next_from'],
+    })
     # data = {
     #     "president": {
     #         "name": "Zaphod Beeblebrox",

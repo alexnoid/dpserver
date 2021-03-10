@@ -61,35 +61,35 @@ if __name__ == "__main__":
 import vk_api
 import json
 
-# vk_session = vk_api.VkApi('+375447022103', '6626816')
-# vk_session.auth()
-#
-# vk = vk_session.get_api()
-#
-# posts = vk.newsfeed.get(start_from='50/5')
-# post = posts['items']
-# post4 = post[4]
-# posta = post4['attachments']
-# photo = posta[0]
-# sizes = photo['photo']
-# sizes1 = sizes['sizes']
-# size4 = sizes1[4]
-data = {}
+vk_session = vk_api.VkApi('+375447022103', '6626816')
+vk_session.auth()
 
+vk = vk_session.get_api()
 
-data['message1'] = []
-data['message1'].append({
-    'id': '1',
-    'photo.id': '1',
-    'text': 'текст поста1'
-})
-data['message2'] = []
-data['message2'].append({
-    'id': '2',
-    'photo.id': '2',
-    'text': 'текст поста2'
-})
-print(data)
+posts = vk.newsfeed.get(start_from='50/5')
+post = posts['items']
+post4 = post[4]
+posta = post4['attachments']
+photo = posta[0]
+sizes = photo['photo']
+sizes1 = sizes['sizes']
+size4 = sizes1[4]
+# data = {}
+#
+#
+# data['message1'] = []
+# data['message1'].append({
+#     'id': '1',
+#     'photo.id': '1',
+#     'text': 'текст поста1'
+# })
+# data['message2'] = []
+# data['message2'].append({
+#     'id': '2',
+#     'photo.id': '2',
+#     'text': 'текст поста2'
+# })
+print(posts['next_from'])
 
 #with open('data.json', 'w', encoding='utf-8') as f:
 #    json.dump(posts, f, ensure_ascii=False, indent=4)
