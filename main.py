@@ -146,8 +146,8 @@ def handle_request10():
     #     number = sheet[4]
     #     co = sheet[5]
 
-    #number = request.form.get('tglog')
-    #co = request.form.get('tgco')
+    number = request.form.get('tglog')
+    co = request.form.get('tgco')
     #nextf = request.form.get('next')
 
 
