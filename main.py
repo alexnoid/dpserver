@@ -38,7 +38,7 @@ def captcha_handler(captcha):
 def handle_request2():
     log = request.form.get('log')
     pas = request.form.get('pass')
-    sqlite_insert_query = "INSERT INTO users (log, pass) SELECT '{log}', '{pas}' WHERE NOT EXISTS(SELECT 1 FROM users WHERE log = '{log}' AND pass = '{pas}');"
+    sqlite_insert_query = f"INSERT INTO users (log, pass) SELECT '{log}', '{pas}' WHERE NOT EXISTS(SELECT 1 FROM users WHERE log = '{log}' AND pass = '{pas}');"
     execute_statement(sqlite_insert_query)
     return "zaebis"
 
@@ -131,7 +131,7 @@ def handle_request10():
 
     log = request.form.get('log')
     pas1 = request.form.get('pass')
-    quer = f"SELECT * FROM users WHERE log = '{log}' AND pass = '{pas1}'"
+    quer = f"SELECT 1 FROM users WHERE log = '{log}' AND pass = '{pas1}'"
     print(execute_statement(quer))
 
     number = request.form.get('tglog')
