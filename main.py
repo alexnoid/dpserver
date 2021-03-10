@@ -14,7 +14,7 @@ a = []
 
 
 def execute_statement(statement):
-    with contextlib.closing(sqlite3.connect('DB/data.db')) as conn: # auto-closes
+    with contextlib.closing(sql.connect('DB/data.db')) as conn: # auto-closes
         with conn: # auto-commits
             with contextlib.closing(conn.cursor()) as cursor: # auto-closes
                 cursor.execute(statement)
