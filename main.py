@@ -64,9 +64,11 @@ def handle_request1():
 @main.route('/zap', methods=['GET', 'POST'])
 def handle_request3():
     con = sql.connect('DB/data.db')
+    log = request.form.get('log')
+    pas = request.form.get('pass')
     with con:
         cur = con.cursor()
-        sqlite_insert_query = "INSERT INTO users (log, pass) SELECT 'Alex', 'alex' WHERE NOT EXISTS(SELECT 1 FROM users WHERE log = 'Alex' AND pass = 'alex');"
+        sqlite_insert_query = "INSERT INTO users (log, pass) SELECT '{log}', '{pas}' WHERE NOT EXISTS(SELECT 1 FROM users WHERE log = 'Alex' AND pass = 'alex');"
         cur.execute(sqlite_insert_query)
         con.commit()
     return "zaebis"
@@ -127,7 +129,7 @@ def handle_request10():
     post = posts['items']
     i =0
     for post4 in post:
-        i+1
+        i=i+1
         if 'attachments' in post4:
             data['message'+str(i)] = []
             print('Нет')
