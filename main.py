@@ -167,13 +167,11 @@ def handle_request10():
     for post4 in post:
         i = i + 1
         print(i)
-        if i > 10:
-            break
         if 'attachments' in post4:
-            data['message' + str(i)] = []
             posta = post4['attachments']
             photo = posta[0]
             if 'photo' in photo:
+                data['message' + str(i)] = []
                 sizes = photo['photo']
                 sizes1 = sizes['sizes']
                 size4 = sizes1[4]
