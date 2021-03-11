@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b871fbf3-0a2c-48f1-9e5b-43480f6c4a5c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tt1.py" beforeDir="false" afterPath="$PROJECT_DIR$/tt1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vk_config.v2.json" beforeDir="false" afterPath="$PROJECT_DIR$/vk_config.v2.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
