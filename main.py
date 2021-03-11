@@ -187,7 +187,7 @@ def handle_request10():
                         'text': 'vk'
                     })
                     continue
-            if 'attachments' in post4 in post4:
+            if 'attachments' in post4:
                 print(post4)
                 posta = post4['attachments']
                 photo = posta[0]
