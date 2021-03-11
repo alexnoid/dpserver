@@ -188,6 +188,7 @@ def handle_request10():
                     })
                     continue
             if 'text' in post4:
+                i=i+1
                 data['message' + str(i)] = []
                 data['message' + str(i)].append({
                     'id': post4['text'],
