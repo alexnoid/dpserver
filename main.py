@@ -183,7 +183,7 @@ def handle_request10():
                     size4 = sizes1[4]
                     data['message' + str(i)] = []
                     data['message' + str(i)].append({
-                        'id': post4['text'],
+                        'id': post4['text']+'a',
                         'photo.id': size4['url'],
                         'text': 'vk'
                     })
