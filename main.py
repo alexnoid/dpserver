@@ -143,6 +143,8 @@ def handle_request10():
     sheets = execute_statement(quer)
     print("Здесь строки")
     print(sheets)
+    number = "zero"
+    co = "zero"
     for sheet in sheets:
         number = sheet[4]
         co = sheet[5]
