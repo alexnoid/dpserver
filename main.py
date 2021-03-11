@@ -238,23 +238,8 @@ def handle_request10():
 
 @main.route('/tgupdate', methods=['GET', 'POST'])
 def handle_request4():
-    try:
-        con = sql.connect('DB/data.db')
-        with con:
-            cur = con.cursor()
-            log = request.form.get('log')
-            tglog = request.form.get('tglog')
-            sqlite_insert_query = "UPDATE users SET tglog = '{tglog}' WHERE log = '{log}';"
-            print(tglog)
-            cur.execute(sqlite_insert_query)
-            con.commit()
-            cur.close()
-    except sql.Error as error:
-        print("Error while connecting to sqlite", error)
-    finally:
-        if (sql.Connection):
-            con.close()
-            print("The SQLite connection is closed")
+    username = request.args.get('username')
+    captch.try_again(username.format(captch.get_url()).strip())
     return "zaebis"
 
 
