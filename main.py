@@ -6,6 +6,7 @@ from telethon import TelegramClient, sync
 import sqlite3 as sql
 import contextlib
 from telethon.sessions import StringSession
+from telethon.tl.functions.messages import GetHistoryRequest
 
 main = Flask(__name__, static_folder="pic")
 
@@ -251,40 +252,28 @@ def get_image():
 
 @main.route('/tgposts', methods=['GET', 'POST'])
 def handle_request5():
-    try:
-        con = sql.connect('DB/data.db')
-        with con:
-            cur = con.cursor()
-            log = request.form.get('log')
-            sqlite_select_query = """SELECT * from users WHERE log = '{log}'"""
-            rows = cur.execute(sqlite_select_query)
-            tglogb = "no";
-            for row in rows:
-                tglogb = row[2];
-            records = cur.fetchall()
-            cur.close()
-            bd_log = 'standart'
-            bd_pas = 'stand'
-            tglog = '+375447022103'
-            print(tglogb)
-
-            api_id = 3070588
-            api_hash = 'd672e46b2442ba3d680075bed9788121'
-
-            client = TelegramClient('dp_sarvar', api_id, api_hash)
-            tgco = request.form.get('tgco')
-            client.connect()
-            channel_username = 'vvalst'
-            for message in client.iter_messages(channel_username, limit=100):
-                if message.photo:
-                    img = client.download_media(message.media, )
-                    print(img)
-    except sql.Error as error:
-        print("Error while connecting to sqlite", error)
-    finally:
-        if (sql.Connection):
-            con.close()
-            print("The SQLite connection is closed")
+    api_id = 3070588
+    api_hash = 'd672e46b2442ba3d680075bed9788121'
+    log = request.form.get('log')
+    pas1 = request.form.get('pass')
+    quer = f"SELECT * FROM users WHERE log = '{log}' AND pass = '{pas1}'"
+    sheets = execute_statement(quer)
+    str1 =""
+    for sheet in sheets:
+        str1 = sheet[3]
+    with TelegramClient(StringSession(str1), api_id, api_hash) as client:
+        for dialog in client.iter_dialogs():
+            if not dialog.is_group and dialog.is_channel:
+                channel_entity = client.get_entity(dialog.id)
+                posts = client(GetHistoryRequest(
+                    peer=channel_entity,
+                    limit=1,
+                    offset_date=None,
+                    offset_id=0,
+                    max_id=0,
+                    min_id=0,
+                    add_offset=0,
+                    hash=0))
     return "zaebis"
 
 
