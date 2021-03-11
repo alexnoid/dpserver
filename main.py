@@ -154,7 +154,7 @@ def handle_request10():
     # number = request.form.get('tglog')
     # co = request.form.get('tgco')
     nextf = request.form.get('next')
-    nextf = 10
+    nextf = 3
     vk_session = vk_api.VkApi(number, co)
     vk_session.auth()
     vk = vk_session.get_api()
