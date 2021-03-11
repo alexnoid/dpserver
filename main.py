@@ -171,8 +171,8 @@ def handle_request10():
     # })
     i = 0
     for post4 in post:
-        if 'text' or 'attachments' in post4:
-            if 'attachments' and 'text' in post4:
+        if 'text' in post4 or 'attachments' in post4:
+            if 'attachments' in post4 and 'text' in post4:
                 print(post4)
                 posta = post4['attachments']
                 photo = posta[0]
