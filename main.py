@@ -256,11 +256,13 @@ def handle_request5():
     api_hash = 'd672e46b2442ba3d680075bed9788121'
     log = request.form.get('log')
     pas1 = request.form.get('pass')
+    print(log, pas1)
     quer = f"SELECT * FROM users WHERE log = '{log}' AND pass = '{pas1}'"
     sheets = execute_statement(quer)
     str1 =""
     for sheet in sheets:
         str1 = sheet[3]
+    print(str1)
     with TelegramClient(StringSession(str1), api_id, api_hash) as client:
         for dialog in client.iter_dialogs():
             if not dialog.is_group and dialog.is_channel:
