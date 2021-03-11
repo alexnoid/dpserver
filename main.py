@@ -166,6 +166,8 @@ def handle_request10():
     i = 0
     for post4 in post:
         i = i + 1
+        if i > 10: 
+            break
         if 'attachments' in post4:
             data['message' + str(i)] = []
             posta = post4['attachments']
