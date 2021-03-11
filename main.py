@@ -162,7 +162,7 @@ def handle_request10():
     # posts = vk.newsfeed.get()
 
     post = posts['items']
-    #print(posts)
+    # print(posts)
     # data['message' + str(i)] = []
     # data['message' + str(i)].append({
     #     'id': 'text',
@@ -183,31 +183,38 @@ def handle_request10():
                     size4 = sizes1[4]
                     data['message' + str(i)] = []
                     data['message' + str(i)].append({
-                        'id': post4['text']+'a',
+                        'id': post4['text'] + 'a',
+                        'photo.id': size4['url'],
+                        'text': 'vk'
+                    })
+                    continue
+            if 'attachments' in post4 in post4:
+                print(post4)
+                posta = post4['attachments']
+                photo = posta[0]
+                if 'photo' in photo and 'text' in post4:
+                    i = i + 1
+                    sizes = photo['photo']
+                    sizes1 = sizes['sizes']
+                    size4 = sizes1[4]
+                    data['message' + str(i)] = []
+                    data['message' + str(i)].append({
+                        'id': 'a',
                         'photo.id': size4['url'],
                         'text': 'vk'
                     })
                     continue
             if 'text' in post4:
-                i=i+1
+                if post4['text'] == '':
+                    continue
+                i = i + 1
                 data['message' + str(i)] = []
                 data['message' + str(i)].append({
                     'id': post4['text'],
                     'photo.id': "0",
                     'text': 'vk'
                 })
-                continue
-            if 'photo' in photo in post4:
-                i = i + 1
-                sizes = photo['photo']
-                sizes1 = sizes['sizes']
-                size4 = sizes1[4]
-                data['message' + str(i)] = []
-                data['message' + str(i)].append({
-                    'id': 'text',
-                    'photo.id': size4['url'],
-                    'text': 'vk'
-                })
+
     data['next'] = []
     data['next'].append({
         'nex': posts['next_from'],
