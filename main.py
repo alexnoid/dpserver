@@ -162,10 +162,11 @@ def handle_request10():
     # posts = vk.newsfeed.get()
 
     post = posts['items']
-    print(posts)
+    #print(posts)
     i = 0
     for post4 in post:
         i = i + 1
+        print(i)
         if i > 10:
             break
         if 'attachments' in post4:
