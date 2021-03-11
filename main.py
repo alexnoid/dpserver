@@ -158,7 +158,7 @@ def handle_request10():
     vk_session = vk_api.VkApi(number, co)
     vk_session.auth()
     vk = vk_session.get_api()
-    posts = vk.newsfeed.get(start_from=nextf)
+    posts = vk.newsfeed.get(start_from=nextf, count=8)
     # posts = vk.newsfeed.get()
 
     post = posts['items']
@@ -166,7 +166,7 @@ def handle_request10():
     i = 0
     for post4 in post:
         i = i + 1
-        if i > 10: 
+        if i > 10:
             break
         if 'attachments' in post4:
             data['message' + str(i)] = []
