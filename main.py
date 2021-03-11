@@ -158,7 +158,7 @@ def handle_request10():
     vk_session = vk_api.VkApi(number, co)
     vk_session.auth()
     vk = vk_session.get_api()
-    posts = vk.newsfeed.get(start_from=nextf, count=15)
+    posts = vk.newsfeed.get(start_from=nextf, count=10)
     # posts = vk.newsfeed.get()
 
     post = posts['items']
