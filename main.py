@@ -15,9 +15,9 @@ a = []
 
 
 def execute_statement(statement):
-    with contextlib.closing(sql.connect('DB/data.db')) as conn: # auto-closes
-        with conn: # auto-commits
-            with contextlib.closing(conn.cursor()) as cursor: # auto-closes
+    with contextlib.closing(sql.connect('DB/data.db')) as conn:  # auto-closes
+        with conn:  # auto-commits
+            with contextlib.closing(conn.cursor()) as cursor:  # auto-closes
                 cursor.execute(statement)
                 values = cursor.fetchall()
                 return values
@@ -96,6 +96,7 @@ def handle_request11():
     execute_statement(query)
     return "zaebis"
 
+
 @main.route('/vk', methods=['GET', 'POST'])
 def handle_request12():
     vklog = request.form.get('tglog')
@@ -150,21 +151,21 @@ def handle_request10():
         number = sheet[4]
         co = sheet[5]
 
-    #number = request.form.get('tglog')
-    #co = request.form.get('tgco')
+    # number = request.form.get('tglog')
+    # co = request.form.get('tgco')
     nextf = request.form.get('next')
     vk_session = vk_api.VkApi(number, co)
     vk_session.auth()
     vk = vk_session.get_api()
     posts = vk.newsfeed.get(start_from=nextf)
-    #posts = vk.newsfeed.get()
+    # posts = vk.newsfeed.get()
 
     post = posts['items']
     print(posts)
     i = 0
     for post4 in post:
+        i = i + 1
         if 'attachments' in post4:
-            i = i + 1
             data['message' + str(i)] = []
             posta = post4['attachments']
             photo = posta[0]
@@ -177,11 +178,20 @@ def handle_request10():
                     'photo.id': size4['url'],
                     'text': 'vk'
                 })
-        data['message' + str(i)].append({
-            'id': post4['text'],
-            'photo.id': "0",
-            'text': 'vk'
-        })
+            else:
+                data['message' + str(i)] = []
+                data['message' + str(i)].append({
+                    'id': post4['text'],
+                    'photo.id': "0",
+                    'text': 'vk'
+                })
+        else:
+            data['message' + str(i)] = []
+            data['message' + str(i)].append({
+                'id': post4['text'],
+                'photo.id': "0",
+                'text': 'vk'
+            })
     data['next'] = []
     data['next'].append({
         'nex': posts['next_from'],
