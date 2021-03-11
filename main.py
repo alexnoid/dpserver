@@ -167,22 +167,23 @@ def handle_request10():
     for post4 in post:
         i = i + 1
         print(i)
-        data['message' + str(i)] = []
-        data['message' + str(i)].append({
-            'id': post4['text'],
-            'photo.id': "0",
-            'text': 'vk'
-        })
-        if 'attachments' in post4:
-            posta = post4['attachments']
-            photo = posta[0]
-            if 'photo' in photo:
-                sizes = photo['photo']
-                sizes1 = sizes['sizes']
-                size4 = sizes1[4]
-                data['message' + str(i)].append({
-                    'photo.id': size4['url'],
-                })
+        if 'text' in post4:
+            data['message' + str(i)] = []
+            data['message' + str(i)].append({
+                'id': post4['text'],
+                'photo.id': "0",
+                'text': 'vk'
+            })
+            if 'attachments' in post4:
+                posta = post4['attachments']
+                photo = posta[0]
+                if 'photo' in photo:
+                    sizes = photo['photo']
+                    sizes1 = sizes['sizes']
+                    size4 = sizes1[4]
+                    data['message' + str(i)].append({
+                        'photo.id': size4['url'],
+                    })
     data['next'] = []
     data['next'].append({
         'nex': posts['next_from'],
