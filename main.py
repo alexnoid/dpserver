@@ -179,12 +179,15 @@ def handle_request10():
                     'text': 'vk'
                 })
             else:
-                data['message' + str(i)] = []
-                data['message' + str(i)].append({
-                    'id': post4['text'],
-                    'photo.id': "0",
-                    'text': 'vk'
-                })
+                if 'text' in post4:
+                    data['message' + str(i)] = []
+                    data['message' + str(i)].append({
+                        'id': post4['text'],
+                        'photo.id': "0",
+                        'text': 'vk'
+                    })
+                else:
+                    i - 1
         else:
             data['message' + str(i)] = []
             data['message' + str(i)].append({
