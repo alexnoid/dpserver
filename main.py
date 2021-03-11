@@ -214,26 +214,26 @@ def handle_request10():
                         'photo.id': "0",
                         'text': 'vk'
                     })
+        data['next'] = []
+        data['next'].append({
+            'nex': posts['next_from'],
+        })
+        # data = {
+        #     "president": {
+        #         "name": "Zaphod Beeblebrox",
+        #         "species": "Betelgeusian"
+        #     }
+        # }
+        # client.log_out()
+        with open("data_file.json", "w+") as write_file:
+            json.dump(data, write_file)
+        print(data)
+        return jsonify(data)
     except vk_api.exceptions.Captcha as captcha:
         print(captcha.sid)  # Получение sid
         print(captcha.get_url())  # Получить ссылку на изображение капчи
         #print(captcha.get_image())  # Получить изображение капчи (jpg)
         captch = captcha
-    data['next'] = []
-    data['next'].append({
-        'nex': posts['next_from'],
-    })
-    # data = {
-    #     "president": {
-    #         "name": "Zaphod Beeblebrox",
-    #         "species": "Betelgeusian"
-    #     }
-    # }
-    # client.log_out()
-    with open("data_file.json", "w+") as write_file:
-        json.dump(data, write_file)
-    print(data)
-    return jsonify(data)
 
 
 @main.route('/tgupdate', methods=['GET', 'POST'])
