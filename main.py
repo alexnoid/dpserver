@@ -10,7 +10,7 @@ from telethon.sessions import StringSession
 main = Flask(__name__, static_folder="pic")
 
 # def gettgposts():
-
+captch = vk_api.Captcha
 a = []
 
 
@@ -217,7 +217,8 @@ def handle_request10():
     except vk_api.exceptions.Captcha as captcha:
         print(captcha.sid)  # Получение sid
         print(captcha.get_url())  # Получить ссылку на изображение капчи
-        print(captcha.get_image())  # Получить изображение капчи (jpg)
+        #print(captcha.get_image())  # Получить изображение капчи (jpg)
+        captch = captcha
     data['next'] = []
     data['next'].append({
         'nex': posts['next_from'],
