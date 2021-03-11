@@ -61,7 +61,7 @@
         },
         "rfc2109": false,
         "secure": true,
-        "value": "c6399cd2a7717825b0cb46fff2060b79897635e742eb2fcb2909f635bdb0f",
+        "value": "0f1554b8cf76d9e7d9f38ab28d65d5dc40985e4c3cf4fc6a61e86083e5828",
         "version": 0
       },
       {
@@ -101,7 +101,7 @@
         "rest": {},
         "rfc2109": false,
         "secure": true,
-        "value": "1",
+        "value": "0",
         "version": 0
       },
       {
@@ -141,7 +141,7 @@
         },
         "rfc2109": false,
         "secure": true,
-        "value": "601470a6a3b67c55a856c3a264ff3064687c07d604edff155cdfabf4086fd",
+        "value": "1d37a5db0256fc844baed17206fdf05e9d22fd05e9be8cc2d3a4a1c541f94",
         "version": 0
       },
       {
@@ -160,7 +160,7 @@
         "rest": {},
         "rfc2109": false,
         "secure": true,
-        "value": "1972960488_u37H3jVxuFZlonrTNjg1cpZ33SjMJLzVpdp4FFM6hVH",
+        "value": "1329023888_ClNLT6tsc487GRZTincsstqUn0iVcmF0TfZJa9g58go",
         "version": 0
       },
       {
@@ -190,7 +190,7 @@
         "domain_initial_dot": true,
         "domain_specified": true,
         "expires": null,
-        "name": "remixusid",
+        "name": "remixuas",
         "path": "/",
         "path_specified": true,
         "port": null,
@@ -200,7 +200,7 @@
         },
         "rfc2109": false,
         "secure": true,
-        "value": "OTJlNTc3OTY0MTY4MTk0NGQxNmIyM2U1",
+        "value": "MjVlMDc1ZjZiYzZkNDQwOWQ0MGNjYWNl",
         "version": 0
       }
     ],

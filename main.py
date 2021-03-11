@@ -154,66 +154,70 @@ def handle_request10():
     # number = request.form.get('tglog')
     # co = request.form.get('tgco')
     nextf = request.form.get('next')
-    vk_session = vk_api.VkApi(number, co)
-    vk_session.auth()
-    vk = vk_session.get_api()
-    posts = vk.newsfeed.get(start_from=nextf, count=3)
-    # posts = vk.newsfeed.get()
+    try:
+        vk_session = vk_api.VkApi(number, co)
+        vk_session.auth()
+        vk = vk_session.get_api()
+        posts = vk.newsfeed.get(start_from=nextf, count=3)
+        # posts = vk.newsfeed.get()
 
-    post = posts['items']
-    # print(posts)
-    # data['message' + str(i)] = []
-    # data['message' + str(i)].append({
-    #     'id': 'text',
-    #     'photo.id': "0",
-    #     'text': 'vk'
-    # })
-    i = 0
-    for post4 in post:
-        if 'text' in post4 or 'attachments' in post4:
-            if 'attachments' in post4 and 'text' in post4:
-                print(post4)
-                posta = post4['attachments']
-                photo = posta[0]
-                if 'photo' in photo and 'text' in post4:
+        post = posts['items']
+        # print(posts)
+        # data['message' + str(i)] = []
+        # data['message' + str(i)].append({
+        #     'id': 'text',
+        #     'photo.id': "0",
+        #     'text': 'vk'
+        # })
+        i = 0
+        for post4 in post:
+            if 'text' in post4 or 'attachments' in post4:
+                if 'attachments' in post4 and 'text' in post4:
+                    print(post4)
+                    posta = post4['attachments']
+                    photo = posta[0]
+                    if 'photo' in photo and 'text' in post4:
+                        i = i + 1
+                        sizes = photo['photo']
+                        sizes1 = sizes['sizes']
+                        size4 = sizes1[4]
+                        data['message' + str(i)] = []
+                        data['message' + str(i)].append({
+                            'id': post4['text'] + 'a',
+                            'photo.id': size4['url'],
+                            'text': 'vk'
+                        })
+                        continue
+                if 'attachments' in post4:
+                    print(post4)
+                    posta = post4['attachments']
+                    photo = posta[0]
+                    if 'photo' in photo and 'text' in post4:
+                        i = i + 1
+                        sizes = photo['photo']
+                        sizes1 = sizes['sizes']
+                        size4 = sizes1[4]
+                        data['message' + str(i)] = []
+                        data['message' + str(i)].append({
+                            'id': 'a',
+                            'photo.id': size4['url'],
+                            'text': 'vk'
+                        })
+                        continue
+                if 'text' in post4:
+                    if post4['text'] == '':
+                        continue
                     i = i + 1
-                    sizes = photo['photo']
-                    sizes1 = sizes['sizes']
-                    size4 = sizes1[4]
                     data['message' + str(i)] = []
                     data['message' + str(i)].append({
-                        'id': post4['text'] + 'a',
-                        'photo.id': size4['url'],
+                        'id': post4['text'],
+                        'photo.id': "0",
                         'text': 'vk'
                     })
-                    continue
-            if 'attachments' in post4:
-                print(post4)
-                posta = post4['attachments']
-                photo = posta[0]
-                if 'photo' in photo and 'text' in post4:
-                    i = i + 1
-                    sizes = photo['photo']
-                    sizes1 = sizes['sizes']
-                    size4 = sizes1[4]
-                    data['message' + str(i)] = []
-                    data['message' + str(i)].append({
-                        'id': 'a',
-                        'photo.id': size4['url'],
-                        'text': 'vk'
-                    })
-                    continue
-            if 'text' in post4:
-                if post4['text'] == '':
-                    continue
-                i = i + 1
-                data['message' + str(i)] = []
-                data['message' + str(i)].append({
-                    'id': post4['text'],
-                    'photo.id': "0",
-                    'text': 'vk'
-                })
-
+    except vk_api.exceptions.Captcha as captcha:
+        print(captcha.sid)  # Получение sid
+        print(captcha.get_url())  # Получить ссылку на изображение капчи
+        print(captcha.get_image())  # Получить изображение капчи (jpg)
     data['next'] = []
     data['next'].append({
         'nex': posts['next_from'],

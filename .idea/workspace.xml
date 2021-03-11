@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b871fbf3-0a2c-48f1-9e5b-43480f6c4a5c" name="Default Changelist" comment="" />
+    <list default="true" id="b871fbf3-0a2c-48f1-9e5b-43480f6c4a5c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tt1.py" beforeDir="false" afterPath="$PROJECT_DIR$/tt1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vk_config.v2.json" beforeDir="false" afterPath="$PROJECT_DIR$/vk_config.v2.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,7 +42,7 @@
       <recent name="C:\Users\alexnoid\Documents\GitHub\dpserver\pic" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.tt2">
+  <component name="RunManager" selected="Python.tt1">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="diplom_sarvar" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -145,8 +150,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.tt2" />
         <item itemvalue="Python.tt1" />
+        <item itemvalue="Python.tt2" />
         <item itemvalue="Python.try1" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.scrab" />
@@ -187,25 +192,25 @@
     </state>
     <state x="456" y="168" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728/1366.6.1280.680@0.0.1366.728" timestamp="1613424713243" />
     <state x="456" y="168" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1615207070911" />
-    <state width="1345" height="153" key="GridCell.Tab.0.bottom" timestamp="1615478560911">
+    <state width="1345" height="153" key="GridCell.Tab.0.bottom" timestamp="1615496898092">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="153" key="GridCell.Tab.0.bottom/0.0.1366.728/-1366.-92.1366.728@0.0.1366.728" timestamp="1615478560911" />
+    <state width="1345" height="153" key="GridCell.Tab.0.bottom/0.0.1366.728/-1366.-92.1366.728@0.0.1366.728" timestamp="1615496898092" />
     <state width="1345" height="153" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1615353168360" />
-    <state width="1345" height="153" key="GridCell.Tab.0.center" timestamp="1615478560911">
+    <state width="1345" height="153" key="GridCell.Tab.0.center" timestamp="1615496898092">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="153" key="GridCell.Tab.0.center/0.0.1366.728/-1366.-92.1366.728@0.0.1366.728" timestamp="1615478560911" />
+    <state width="1345" height="153" key="GridCell.Tab.0.center/0.0.1366.728/-1366.-92.1366.728@0.0.1366.728" timestamp="1615496898092" />
     <state width="1345" height="153" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1615353168360" />
-    <state width="1345" height="153" key="GridCell.Tab.0.left" timestamp="1615478560911">
+    <state width="1345" height="153" key="GridCell.Tab.0.left" timestamp="1615496898092">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="153" key="GridCell.Tab.0.left/0.0.1366.728/-1366.-92.1366.728@0.0.1366.728" timestamp="1615478560911" />
+    <state width="1345" height="153" key="GridCell.Tab.0.left/0.0.1366.728/-1366.-92.1366.728@0.0.1366.728" timestamp="1615496898092" />
     <state width="1345" height="153" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1615353168360" />
-    <state width="1345" height="153" key="GridCell.Tab.0.right" timestamp="1615478560911">
+    <state width="1345" height="153" key="GridCell.Tab.0.right" timestamp="1615496898092">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="153" key="GridCell.Tab.0.right/0.0.1366.728/-1366.-92.1366.728@0.0.1366.728" timestamp="1615478560911" />
+    <state width="1345" height="153" key="GridCell.Tab.0.right/0.0.1366.728/-1366.-92.1366.728@0.0.1366.728" timestamp="1615496898092" />
     <state width="1345" height="153" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1615353168360" />
     <state width="1345" height="223" key="GridCell.Tab.1.bottom" timestamp="1614261115008">
       <screen x="0" y="0" width="1366" height="728" />
