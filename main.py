@@ -92,6 +92,7 @@ def handle_request11():
         client.sign_in(vklog, vkpas)
     sessia = StringSession.save(client.session)
     query = f"UPDATE users SET tglog = '{sessia}' WHERE log = '{log}';"
+    print(sessia)
     execute_statement(query)
     return "zaebis"
 
@@ -176,6 +177,11 @@ def handle_request10():
                     'photo.id': size4['url'],
                     'text': 'vk'
                 })
+        data['message' + str(i)].append({
+            'id': post4['text'],
+            'photo.id': "0",
+            'text': 'vk'
+        })
     data['next'] = []
     data['next'].append({
         'nex': posts['next_from'],
