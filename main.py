@@ -113,7 +113,7 @@ def handle_request12():
 @main.route('/jason', methods=['GET', 'POST'])
 def handle_request10():
     # api_id = 3070588
-    
+
     # api_hash = 'd672e46b2442ba3d680075bed9788121'
     # number = request.form.get('tglog')
     # co = request.form.get('tgco')
@@ -157,7 +157,7 @@ def handle_request10():
     # co = request.form.get('tgco')
     nextf = request.form.get('next')
     try:
-        vk_session = vk_api.VkApi(number, co)
+        vk_session = vk_api.VkApi(number, co, captcha_handler=captcha_handler)
         vk_session.auth()
         vk = vk_session.get_api()
         posts = vk.newsfeed.get(start_from=nextf, count=3)
@@ -227,16 +227,16 @@ def handle_request10():
         #     }
         # }
         # client.log_out()
-        with open("data_file.json", "w+") as write_file:
-            json.dump(data, write_file)
-        print(data)
+
         return jsonify(data)
     except vk_api.exceptions.Captcha as captcha:
         print(captcha.sid)  # Получение sid
         print(captcha.get_url())  # Получить ссылку на изображение капчи
         #print(captcha.get_image())  # Получить изображение капчи (jpg)
         captch = captcha
-
+    with open("data_file.json", "w+") as write_file:
+        json.dump(data, write_file)
+    print(data)
 
 @main.route('/tgupdate', methods=['GET', 'POST'])
 def handle_request4():
