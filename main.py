@@ -249,23 +249,13 @@ def handle_request5():
     print(log, pas1)
     quer = f"SELECT * FROM users WHERE log = '{log}' AND pass = '{pas1}'"
     sheets = execute_statement(quer)
-    str1 ="1ApWapzMBuzPOAmzqDmhlmzoVoWaupfijafsnmPbmcT5P7v0ETh5ywMnsiSwEXJ8dU9mPt9r9ZO9jNsavf8o155dkJKwBmWZe-X_PbBDLDS4UzIOCLO2fy82UObyFk9qUoC97pjiE5_LvGuWnJA6C0DnbVDDkT45Gqoax2AQ107pNb-pj-RLt89FUrxQ29pPiqDv7BXu2hOaiL3FkyP0Q0Mcs76WkkqNbg6BJMSDLZXvkkTflOgmTToqwHLR2stmq56JknWz14Afn3bWGcoCU3rOPAbuW06WvyTWykCBQieWX70eZHN9cnuwxEAXtab4sZ4Pcu5FxbbamWTaeuVb52xTFmsbxAoY="
+    str1 = sheets[4]
     for sheet in sheets:
         str1 = sheet[3]
     print(str1)
-    with TelegramClient(StringSession(str1), api_id, api_hash) as client:
-        for dialog in client.iter_dialogs():
-            if not dialog.is_group and dialog.is_channel:
-                channel_entity = client.get_entity(dialog.id)
-                posts = client(GetHistoryRequest(
-                    peer=channel_entity,
-                    limit=1,
-                    offset_date=None,
-                    offset_id=0,
-                    max_id=0,
-                    min_id=0,
-                    add_offset=0,
-                    hash=0))
+    s = "1ApWapzMBu5xdaUSOtQE4QelakhjhiNRjYIlejyK4zoK6aJ8QDHdjVM1dObcDesAQSlAkQpPKmDjQnkmLxZcZ-NvxDPnPZ4Kx4EOpsqaqA4FhtICjZztzNd-lRkrXmJujDuWVZ28aVhOaP9vbO78Qwfu9M_w7YWEeBxZNB-SobxzRpfNa1CHJh_b-PJdZxN4a-cbnB8ry4A2m8l-tyFiFCmpWLsEyVjLA5_s6d2lYMZCXrVoVWQA0W8Rt5DPD7UG_FhdlOHYshjID5qRDTtQPAEQeYOq8jhz-vKYIb66GU_UNSW86_d3m8qS0gqmA6avJJlrekLAkUygU2pYEmWBRy9dEToxkamI="
+    client = TelegramClient(StringSession(s), api_id, api_hash)
+    client.connect()
     return "zaebis"
 
 
