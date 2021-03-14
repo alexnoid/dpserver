@@ -1,5 +1,4 @@
 import vk_api
-from PIL import Image
 from flask import Flask, request, jsonify, send_file, send_from_directory
 import json
 from telethon import TelegramClient, sync
@@ -10,8 +9,6 @@ from telethon.tl.functions.messages import GetHistoryRequest
 
 main = Flask(__name__, static_folder="pic")
 
-# def gettgposts():
-captch = vk_api.Captcha
 a = []
 
 
@@ -232,17 +229,9 @@ def handle_request10():
     except vk_api.exceptions.Captcha as captcha:
         print(captcha.sid)  # Получение sid
         print(captcha.get_url())  # Получить ссылку на изображение капчи
-        #print(captcha.get_image())  # Получить изображение капчи (jpg)
-        captch = captcha
     with open("data_file.json", "w+") as write_file:
         json.dump(data, write_file)
     print(data)
-
-@main.route('/tgupdate', methods=['GET', 'POST'])
-def handle_request4():
-    username = request.args.get('username')
-    captch.try_again(username.format(captch.get_url()).strip())
-    return "zaebis"
 
 
 @main.route('/get_image')
@@ -292,12 +281,3 @@ else:
 if __name__ == '__main__':
     main.run()
 
-# vk_session = vk_api.VkApi('+375447022103', '6626816')
-# vk_session.auth()
-
-# vk = vk_session.get_api()
-
-# posts = vk.newsfeed.get()
-
-# with open('data.json', 'w', encoding='utf-8') as f:
-#    json.dump(posts, f, ensure_ascii=False, indent=4)

@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b871fbf3-0a2c-48f1-9e5b-43480f6c4a5c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/data_file.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB/data.db" beforeDir="false" afterPath="$PROJECT_DIR$/DB/data.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vk_config.v2.json" beforeDir="false" afterPath="$PROJECT_DIR$/vk_config.v2.json" afterDir="false" />
-    </list>
+    <list default="true" id="dbfc731e-3d50-4c53-aa67-0f0887fa7bd7" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,144 +14,14 @@
       </list>
     </option>
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="ProjectId" id="1o1NZCoZ48VfcSDTQEvIld2OdUb" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="1pkZysiD4cX975BDJR06hBmYncg" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pic" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\alexnoid\Documents\GitHub\dpserver\pic" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Python.tt2">
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="diplom_sarvar" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="scrab" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="diplom_sarvar" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/venv" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/venv/scrab.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="try1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="diplom_sarvar" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/venv" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/venv/try1.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="tt1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="diplom_sarvar" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tt1.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="tt2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="diplom_sarvar" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tt2.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Python.tt2" />
-        <item itemvalue="Python.tt1" />
-        <item itemvalue="Python.try1" />
-        <item itemvalue="Python.main" />
-        <item itemvalue="Python.scrab" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -176,68 +40,12 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b871fbf3-0a2c-48f1-9e5b-43480f6c4a5c" name="Default Changelist" comment="" />
-      <created>1612450189446</created>
+      <changelist id="dbfc731e-3d50-4c53-aa67-0f0887fa7bd7" name="Default Changelist" comment="" />
+      <created>1615729305903</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1612450189446</updated>
+      <updated>1615729305903</updated>
     </task>
     <servers />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="456" y="168" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1615207070911">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="456" y="168" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728/1366.6.1280.680@0.0.1366.728" timestamp="1613424713243" />
-    <state x="456" y="168" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1615207070911" />
-    <state width="1345" height="153" key="GridCell.Tab.0.bottom" timestamp="1615503044851">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1345" height="153" key="GridCell.Tab.0.bottom/0.0.1366.728/-1366.-92.1366.728@0.0.1366.728" timestamp="1615503044851" />
-    <state width="1345" height="153" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1615353168360" />
-    <state width="1345" height="153" key="GridCell.Tab.0.center" timestamp="1615503044851">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1345" height="153" key="GridCell.Tab.0.center/0.0.1366.728/-1366.-92.1366.728@0.0.1366.728" timestamp="1615503044851" />
-    <state width="1345" height="153" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1615353168360" />
-    <state width="1345" height="153" key="GridCell.Tab.0.left" timestamp="1615503044851">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1345" height="153" key="GridCell.Tab.0.left/0.0.1366.728/-1366.-92.1366.728@0.0.1366.728" timestamp="1615503044851" />
-    <state width="1345" height="153" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1615353168360" />
-    <state width="1345" height="153" key="GridCell.Tab.0.right" timestamp="1615503044851">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1345" height="153" key="GridCell.Tab.0.right/0.0.1366.728/-1366.-92.1366.728@0.0.1366.728" timestamp="1615503044851" />
-    <state width="1345" height="153" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1615353168360" />
-    <state width="1345" height="223" key="GridCell.Tab.1.bottom" timestamp="1614261115008">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1345" height="223" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1614261115008" />
-    <state width="1345" height="223" key="GridCell.Tab.1.center" timestamp="1614261115008">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1345" height="223" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1614261115008" />
-    <state width="1345" height="223" key="GridCell.Tab.1.left" timestamp="1614261115008">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1345" height="223" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1614261115008" />
-    <state width="1345" height="223" key="GridCell.Tab.1.right" timestamp="1614261115008">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1345" height="223" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1614261115008" />
-    <state x="379" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1615536160208">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="379" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.728/-1366.-92.1366.728@0.0.1366.728" timestamp="1615465593231" />
-    <state x="379" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.6.1280.680@0.0.1366.728" timestamp="1613424611794" />
-    <state x="379" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1615536160208" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1613359513806">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1613359513806" />
   </component>
 </project>
