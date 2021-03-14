@@ -177,11 +177,11 @@ def handle_request10():
                 })
     data['next'] = []
     data['next'].append({
-        'nex': posts['next_from'],
+        'nex': posts['next_from']
     })
     data['count'] = []
     data['count'].append({
-        'count': i,
+        'count': i
     })
     # data = {
     #     "president": {
