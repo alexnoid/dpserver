@@ -179,6 +179,10 @@ def handle_request10():
     data['next'].append({
         'nex': posts['next_from'],
     })
+    data['count'] = []
+    data['count'].append({
+        'count': i,
+    })
     # data = {
     #     "president": {
     #         "name": "Zaphod Beeblebrox",
