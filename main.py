@@ -109,34 +109,7 @@ def handle_request12():
 
 @main.route('/jason', methods=['GET', 'POST'])
 def handle_request10():
-    # api_id = 3070588
-
-    # api_hash = 'd672e46b2442ba3d680075bed9788121'
-    # number = request.form.get('tglog')
-    # co = request.form.get('tgco')
-    # client = TelegramClient('dp_sarvar', api_id, api_hash)
-    # client.connect()
-    # client.send_code_request(number)
-    # me = client.sign_in(number, co)
-    # x = [[d.unread_count, d.title] for d in client.get_dialogs() if not getattr(d.entity, 'is_private', False) and d.unread_count != 0]
-    # print(client.get_me().stringify())
-    channel_username = 'portablik'
-
     data = {}
-    # data['message1'].append({
-    #     'id': 'Scott',
-    #     'photo.id': 'https://dpsarvar.herokuapp.com/pic/izo1.png',
-    #     'text': 'текст поста'
-    # })
-    i = 0
-    # for message in client.iter_messages(channel_username, limit=10):
-    #     data['message'+str(i)] = []
-    #     data['message'+str(i)].append({
-    #         'id': message.id,
-    #         'photoid': '0',
-    #         'text': str(message.text)
-    #     })
-    #     i+1
 
     log = request.form.get('log')
     pas1 = request.form.get('pass')
@@ -150,24 +123,13 @@ def handle_request10():
         number = sheet[4]
         co = sheet[5]
 
-    # number = request.form.get('tglog')
-    # co = request.form.get('tgco')
     nextf = request.form.get('next')
     print(number, co)
     vk_session = vk_api.VkApi(number, co)
     vk_session.auth()
     vk = vk_session.get_api()
     posts = vk.newsfeed.get(start_from=nextf, count=3)
-    # posts = vk.newsfeed.get()
-
     post = posts['items']
-    # print(posts)
-    # data['message' + str(i)] = []
-    # data['message' + str(i)].append({
-    #     'id': 'text',
-    #     'photo.id': "0",
-    #     'text': 'vk'
-    # })
     i = 0
     for post4 in post:
         if 'text' in post4 or 'attachments' in post4:
