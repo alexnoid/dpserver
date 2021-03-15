@@ -1,7 +1,7 @@
 import vk_api
 from flask import Flask, request, jsonify, send_file, send_from_directory
 import json
-from telethon import TelegramClient
+from telethon import TelegramClient, sync
 import sqlite3 as sql
 import contextlib
 from telethon.sessions import StringSession
