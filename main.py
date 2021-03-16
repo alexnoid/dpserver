@@ -10,8 +10,11 @@ import random
 import socketio
 
 main = Flask(__name__, static_folder="pic")
+<<<<<<< HEAD
 
 sio = socketio.Server()
+=======
+>>>>>>> parent of b38fb42 (socket)
 
 a = []
 
@@ -61,7 +64,10 @@ def handle_request1():
         bd_log = record[1];
         bd_pas = record[2];
         if log == bd_log and pas == bd_pas:
+<<<<<<< HEAD
             sio.emit("status-update", "fsfsfsfsfsfsf")
+=======
+>>>>>>> parent of b38fb42 (socket)
             return "zaebis"
     return "hrenota"
 
