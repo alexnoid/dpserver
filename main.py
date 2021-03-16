@@ -114,7 +114,6 @@ def handle_request12():
 @main.route('/jason', methods=['GET', 'POST'])
 def handle_request10():
     data = {}
-
     log = request.form.get('log')
     pas1 = request.form.get('pass')
     quer = f"SELECT * FROM users WHERE log = '{log}' AND pass = '{pas1}'"
@@ -138,7 +137,7 @@ def handle_request10():
     for post4 in post:
         if 'text' in post4 or 'attachments' in post4:
             if 'attachments' in post4 and 'text' in post4:
-                print(post4)
+                #print(post4)
                 posta = post4['attachments']
                 photo = posta[0]
                 if 'photo' in photo and 'text' in post4:
@@ -154,7 +153,7 @@ def handle_request10():
                     })
                     continue
             if 'attachments' in post4:
-                print(post4)
+                #print(post4)
                 posta = post4['attachments']
                 photo = posta[0]
                 if 'photo' in photo and 'text' in post4:
