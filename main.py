@@ -6,9 +6,7 @@ import sqlite3 as sql
 import contextlib
 from telethon.sessions import StringSession
 from telethon.tl.functions.messages import GetHistoryRequest
-from flask_socketio import SocketIO
 import random
-import socketio
 
 main = Flask(__name__, static_folder="pic")
 #sio = socketio.Server()
