@@ -1,1 +1,1 @@
-web: gunicorn main:main
+web: gunicorn main:main --preload -b 0.0.0.0:5000 
