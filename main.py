@@ -11,8 +11,11 @@ import socketio
 
 main = Flask(__name__, static_folder="pic")
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 sio = socketio.Server()
+=======
+>>>>>>> parent of b38fb42 (socket)
 =======
 >>>>>>> parent of b38fb42 (socket)
 
@@ -65,7 +68,10 @@ def handle_request1():
         bd_pas = record[2];
         if log == bd_log and pas == bd_pas:
 <<<<<<< HEAD
+<<<<<<< HEAD
             sio.emit("status-update", "fsfsfsfsfsfsf")
+=======
+>>>>>>> parent of b38fb42 (socket)
 =======
 >>>>>>> parent of b38fb42 (socket)
             return "zaebis"
