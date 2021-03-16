@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dbfc731e-3d50-4c53-aa67-0f0887fa7bd7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/tg.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_file.json" beforeDir="false" afterPath="$PROJECT_DIR$/data_file.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB/data.db" beforeDir="false" afterPath="$PROJECT_DIR$/DB/data.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -65,7 +66,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
   </component>
-  <component name="RunManager" selected="Python.t1bapass">
+  <component name="RunManager" selected="Python.tg">
     <configuration name="t1bapass" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="new_sarvar" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -110,8 +111,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.t1bapass" />
         <item itemvalue="Python.tg" />
+        <item itemvalue="Python.t1bapass" />
       </list>
     </recent_temporary>
   </component>
@@ -141,21 +142,22 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1345" height="179" key="GridCell.Tab.0.bottom" timestamp="1615791670790">
+    <state width="1345" height="179" key="GridCell.Tab.0.bottom" timestamp="1615777054836">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1615791670790" />
-    <state width="1345" height="179" key="GridCell.Tab.0.center" timestamp="1615791670789">
+    <state width="1345" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1615777054836" />
+    <state width="1345" height="179" key="GridCell.Tab.0.center" timestamp="1615777054836">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1615791670789" />
-    <state width="1345" height="179" key="GridCell.Tab.0.left" timestamp="1615791670789">
+    <state width="1345" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1615777054836" />
+    <state width="1345" height="179" key="GridCell.Tab.0.left" timestamp="1615777054836">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1615791670789" />
-    <state width="1345" height="179" key="GridCell.Tab.0.right" timestamp="1615791670789">
+    <state width="1345" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1615777054836" />
+    <state width="1345" height="179" key="GridCell.Tab.0.right" timestamp="1615777054836">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
+<<<<<<< HEAD
     <state width="1345" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1615791670789" />
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -189,5 +191,12 @@
     </state>
     <state x="379" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1615791071234" />
 >>>>>>> parent of b38fb42 (socket)
+=======
+    <state width="1345" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1615777054836" />
+    <state x="379" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1615764371130">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="379" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1615764371130" />
+>>>>>>> parent of d4b987e (2)
   </component>
 </project>
