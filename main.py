@@ -7,6 +7,7 @@ import contextlib
 from telethon.sessions import StringSession
 from telethon.tl.functions.messages import GetHistoryRequest
 import random
+import socketio
 
 main = Flask(__name__, static_folder="pic")
 #sio = socketio.Server()
@@ -244,6 +245,7 @@ def handle_request5():
                             break
                         else:
                             if random.randint(1, 3) == 3:
+                                print(random.randint(1, 3))
                                 i = i + 1
                                 print(i)
                                 print(message.message)
