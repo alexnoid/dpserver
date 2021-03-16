@@ -8,9 +8,10 @@ from telethon.sessions import StringSession
 from telethon.tl.functions.messages import GetHistoryRequest
 from flask_socketio import SocketIO
 import random
+import socketio
 
 main = Flask(__name__, static_folder="pic")
-socket = SocketIO(main, logger=True, engineio_logger=True)
+sio = socketio.Server()
 
 a = []
 
@@ -60,7 +61,7 @@ def handle_request1():
         bd_log = record[1];
         bd_pas = record[2];
         if log == bd_log and pas == bd_pas:
-            socket.emit("status-update", "fsfsfsfsfsfsf")
+            sio.emit("status-update", "fsfsfsfsfsfsf")
             return "zaebis"
     return "hrenota"
 

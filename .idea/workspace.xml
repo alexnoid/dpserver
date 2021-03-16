@@ -4,7 +4,24 @@
     <list default="true" id="dbfc731e-3d50-4c53-aa67-0f0887fa7bd7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/telethon/client/chats.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/telethon/client/chats.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/telethon/client/dialogs.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/telethon/client/dialogs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/telethon/client/users.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/telethon/client/users.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/telethon/crypto/aes.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/telethon/crypto/aes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/telethon/crypto/aesctr.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/telethon/crypto/aesctr.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/telethon/errors/rpcerrorlist.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/telethon/errors/rpcerrorlist.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/telethon/events/newmessage.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/telethon/events/newmessage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/telethon/events/userupdate.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/telethon/events/userupdate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/telethon/tl/alltlobjects.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/telethon/tl/alltlobjects.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/telethon/tl/custom/message.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/telethon/tl/custom/message.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/telethon/tl/custom/messagebutton.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/telethon/tl/custom/messagebutton.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/telethon/tl/functions/channels.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/telethon/tl/functions/channels.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/telethon/tl/functions/messages.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/telethon/tl/functions/messages.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/telethon/tl/functions/phone.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/telethon/tl/functions/phone.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/telethon/tl/types/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/telethon/tl/types/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/telethon/tl/types/messages.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/telethon/tl/types/messages.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/telethon/tl/types/phone.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/telethon/tl/types/phone.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/telethon/version.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/telethon/version.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,9 +140,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1345" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1615791670789" />
-    <state x="379" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1615848111060">
+    <state x="379" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1615853241729">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="379" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1615848111060" />
+    <state x="379" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1615853241729" />
   </component>
 </project>
