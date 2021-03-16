@@ -7,7 +7,6 @@ import contextlib
 from telethon.sessions import StringSession
 from telethon.tl.functions.messages import GetHistoryRequest
 import random
-import socketio
 
 main = Flask(__name__, static_folder="pic")
 #sio = socketio.Server()
