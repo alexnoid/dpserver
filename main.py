@@ -146,7 +146,7 @@ def handle_request10():
                     size4 = sizes1[4]
                     data['message' + str(i)] = []
                     data['message' + str(i)].append({
-                        'id': post4['text'] + 'a',
+                        'id': post4['text'],
                         'photo.id': size4['url'],
                         'text': 'vk'
                     })
@@ -238,7 +238,7 @@ def handle_request5():
                     hash=0))
                 for message in posts.messages:
                     if message.message != '':
-                        if i >= 3:
+                        if i >= 1:
                             pora = True
                             break
                         else:
