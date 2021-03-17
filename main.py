@@ -237,13 +237,12 @@ def handle_request5():
                     add_offset=0,
                     hash=0))
                 for message in posts.messages:
-                    if message.message != '':
+                    if message.text != '':
                         if i >= 1:
                             pora = True
                             break
                         else:
                             if random.randint(1, 3) == 3:
-                                print(random.randint(1, 3))
                                 i = i + 1
                                 print(i)
                                 print(message.message)
