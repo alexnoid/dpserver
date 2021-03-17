@@ -90,7 +90,8 @@ def handle_request11():
     client = TelegramClient('dp_sarvar', api_id, api_hash)
     client.connect()
     client.send_code_request(vklog)
-    client.sign_in(vklog, vkpas)
+    if vkpas != "0":
+        client.sign_in(vklog, vkpas)
     sessia = StringSession.save(client.session)
     query = f"UPDATE users SET tglog = '{sessia}' WHERE log = '{log}';"
     print(sessia)
