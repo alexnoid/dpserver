@@ -88,7 +88,7 @@ def handle_request11():
     api_hash = 'd672e46b2442ba3d680075bed9788121'
     number = request.form.get('tglog')
     client = TelegramClient(vklog, api_id, api_hash)
-    #client.connect()
+    client.connect()
     client.send_code_request(vklog)
     if vkpas !="0":
         client.sign_in(vklog, vkpas)
