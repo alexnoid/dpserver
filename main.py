@@ -218,7 +218,8 @@ def handle_request5():
     # for sheet in sheets:
     #     str1 = sheet[3]
     # print(str1)
-    s = "1ApWapzMBu5xdaUSOtQE4QelakhjhiNRjYIlejyK4zoK6aJ8QDHdjVM1dObcDesAQSlAkQpPKmDjQnkmLxZcZ-NvxDPnPZ4Kx4EOpsqaqA4FhtICjZztzNd-lRkrXmJujDuWVZ28aVhOaP9vbO78Qwfu9M_w7YWEeBxZNB-SobxzRpfNa1CHJh_b-PJdZxN4a-cbnB8ry4A2m8l-tyFiFCmpWLsEyVjLA5_s6d2lYMZCXrVoVWQA0W8Rt5DPD7UG_FhdlOHYshjID5qRDTtQPAEQeYOq8jhz-vKYIb66GU_UNSW86_d3m8qS0gqmA6avJJlrekLAkUygU2pYEmWBRy9dEToxkamI="
+    s = sheets[0][3]
+    print(s)
     client = TelegramClient(StringSession(s), api_id, api_hash)
     client.connect()
     data = {}
